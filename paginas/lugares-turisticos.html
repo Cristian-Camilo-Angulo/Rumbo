@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Descubre los paisajes, ríos, cerros y lugares turísticos del Valle del Patía, Cauca, con Rumbo.">
+
+    <meta name="theme-color" content="#294638">
+
+    <title>Lugares que cuentan historias | Rumbo</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/paginas.css">
+    <link rel="stylesheet" href="../css/lugares-turisticos.css">
+
+    <script src="../js/lugares-turisticos.js" defer></script>
+</head>
+
+<body class="lugares-pagina">
+
+    <!-- ENCABEZADO -->
+    <header class="lugares-header">
+        <a href="../index.html"
+           class="lugares-logo"
+           aria-label="Rumbo, volver al inicio">
+
+            <span class="lugares-logo-simbolo">R.</span>
+            <span>rumbo<span class="lugares-logo-punto">.</span></span>
+        </a>
+
+        <nav class="lugares-nav" aria-label="Navegación principal">
+            <a href="../index.html">Inicio</a>
+            <a href="territorio.html">Territorio</a>
+            <a href="#lugares-destinos">Lugares turísticos</a>
+
+            <div class="lugares-descubrir" id="lugaresDescubrir">
+                <button
+                    class="lugares-descubrir-boton"
+                    id="botonDescubrirLugares"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="menuDescubrirLugares">
+
+                    Descubrir
+                    <span aria-hidden="true">⌄</span>
+                </button>
+
+                <div
+                    class="lugares-descubrir-menu"
+                    id="menuDescubrirLugares"
+                    hidden>
+
+                    <a href="artesania.html">
+                        <span>Artesanía</span>
+                        <small>Oficios y saberes del totumo</small>
+                    </a>
+
+                    <a href="musica.html">
+                        <span>Música y tradición</span>
+                        <small>Violín, bambuco y danza</small>
+                    </a>
+
+                    <a href="sabores.html">
+                        <span>Sabores</span>
+                        <small>Gastronomía y memoria patiana</small>
+                    </a>
+
+                    <a href="territorio.html">
+                        <span>Territorio</span>
+                        <small>Paisajes y lugares por conocer</small>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- PORTADA EDITORIAL -->
+        <section class="lugares-portada">
+
+            <div class="lugares-portada-texto">
+                <span class="lugares-etiqueta">
+                    RUMBO · VALLE DEL PATÍA · CAUCA
+                </span>
+
+                <h1>
+                    Hay lugares<br>
+                    que guardan<br>
+                    <em>historias.</em>
+                </h1>
+
+                <p>
+                    Entre ríos, montañas y caminos, Patía conserva paisajes
+                    que hablan de sus raíces, de su gente y de la memoria
+                    de un territorio que merece ser descubierto.
+                </p>
+
+                <a href="#lugares-destinos" class="lugares-boton-principal">
+                    Explorar los destinos
+                    <span aria-hidden="true">↓</span>
+                </a>
+
+                <div class="lugares-portada-indice">
+                    <span>01</span>
+                    <span>PAISAJE · MEMORIA · NATURALEZA</span>
+                </div>
+            </div>
+
+            <div class="lugares-portada-visual">
+                <div class="lugares-portada-foto">
+                    <img
+                        src="../img/18.jpeg"
+                        alt="Paisaje de montañas del Valle del Patía"
+                        onerror="this.onerror=null;this.src='../img/19.jpeg';">
+
+                    <span class="lugares-portada-sello">
+                        PATÍA<br>POR DESCUBRIR
+                    </span>
+                </div>
+
+                <div class="lugares-portada-nota">
+                    <span class="lugares-nota-linea"></span>
+                    <p>
+                        Un territorio que se descubre
+                        <em>mirando más despacio.</em>
+                    </p>
+                </div>
+
+                <span class="lugares-portada-numero" aria-hidden="true">
+                    P.
+                </span>
+            </div>
+        </section>
+
+
+        <!-- INTRODUCCIÓN -->
+        <section class="lugares-introduccion">
+            <div class="lugares-introduccion-titulo">
+                <span class="lugares-etiqueta">MÁS ALLÁ DEL CAMINO</span>
+
+                <h2>
+                    Cada lugar tiene<br>
+                    algo que <em>contar.</em>
+                </h2>
+            </div>
+
+            <div class="lugares-introduccion-texto">
+                <p>
+                    Conocer un destino es también escuchar las historias
+                    que viven en sus paisajes. Algunos lugares conservan
+                    relatos transmitidos por generaciones; otros invitan
+                    a contemplar la naturaleza y compartir junto al río.
+                </p>
+
+                <p>
+                    Esta galería reúne lugares de interés del Valle del
+                    Patía a través de fotografías y relatos. Selecciona
+                    cada destino para conocer la historia que lo hace especial.
+                </p>
+
+                <a href="#lugares-destinos" class="lugares-enlace-texto">
+                    Comenzar el recorrido <span aria-hidden="true">↘</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- GALERÍA DE DESTINOS -->
+        <section class="lugares-galeria" id="lugares-destinos">
+
+            <div class="lugares-galeria-cabecera">
+                <div>
+                    <span class="lugares-etiqueta">01 — EL TERRITORIO</span>
+                    <h2>
+                        Destinos para<br>
+                        <em>recordar.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    Seis lugares, distintas formas de descubrir Patía.
+                    Explora las fotografías y entra en cada historia.
+                </p>
+            </div>
+
+
+            <!-- CERRO DE LA INDIA -->
+            <article class="destino destino-india"
+                     id="destino-cerro-india">
+
+                <button
+                    class="destino-imagen destino-imagen-alta"
+                    type="button"
+                    data-destino="cerro-india"
+                    aria-label="Conocer la historia del Cerro de la India">
+
+                    <img
+                        src="../img/Cerro_De_La_India.jpg"
+                        alt="Paisaje del Cerro de la India"
+                        loading="lazy"
+                        data-imagen-base="Cerro_De_La_India">
+
+                    <span class="destino-numero">01 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>MEMORIA ANCESTRAL</span>
+                        <span>Valle del Patía</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">LEYENDA Y PAISAJE</span>
+
+                    <h3>Cerro de la India</h3>
+
+                    <p>
+                        Una silueta en la montaña y una historia que forma
+                        parte de la tradición oral del territorio.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="cerro-india">
+                        Descubrir su historia <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- RÍO PATÍA - BALNEARIO DE ANGULO -->
+            <article class="destino destino-angulo"
+                     id="destino-angulo">
+
+                <button
+                    class="destino-imagen destino-imagen-ancha"
+                    type="button"
+                    data-destino="balneario-angulo"
+                    aria-label="Conocer el Río Patía y el Balneario de Angulo">
+
+                    <img
+    src="../img/angulo.jpeg"
+    alt="Río Patía — Balneario de Angulo"
+    loading="eager">
+
+                    <span class="destino-numero">02 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>AGUA Y TERRITORIO</span>
+                        <span>Río Patía</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">PAISAJE FLUVIAL</span>
+
+                    <h3>Río Patía — Balneario de Angulo</h3>
+
+                    <p>
+                        Un espacio para apreciar el paisaje del río y
+                        conocer uno de los lugares señalados en tu recorrido.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="balneario-angulo">
+                        Explorar el lugar <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- CERRO DE MANZANILLO -->
+            <article class="destino destino-manzanillo"
+                     id="destino-manzanillo">
+
+                <button
+                    class="destino-imagen destino-imagen-alta"
+                    type="button"
+                    data-destino="cerro-manzanillo"
+                    aria-label="Conocer la historia del Cerro de Manzanillo">
+
+                    <img
+                        src="../img/CerroDeManzanillo.jpg"
+                        alt="Paisaje del Cerro de Manzanillo"
+                        loading="lazy"
+                        data-imagen-base="CerroDeManzanillo">
+
+                    <span class="destino-numero">03 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>RAÍCES Y MEMORIA</span>
+                        <span>Patía, Cauca</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">MEMORIA AFRO</span>
+
+                    <h3>Cerro de Manzanillo</h3>
+
+                    <p>
+                        Un paisaje relacionado, a través de la tradición
+                        oral, con la memoria y las raíces africanas.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="cerro-manzanillo">
+                        Conocer su relato <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- BALNEARIO LA INDIA -->
+            <article class="destino destino-balneario-india"
+                     id="destino-balneario-india">
+
+                <button
+                    class="destino-imagen destino-imagen-ancha"
+                    type="button"
+                    data-destino="balneario-india"
+                    aria-label="Conocer el Balneario La India, Río Patía">
+
+                    <img
+                        src="../img/Balneario La India Rio Patia.jpg"
+                        alt="Paisaje del Balneario La India, en el Río Patía"
+                        loading="lazy"
+                        data-imagen-base="Balneario La India Rio Patia">
+
+                    <span class="destino-numero">04 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>NATURALEZA Y AGUA</span>
+                        <span>Balneario La India</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">PAISAJE NATURAL</span>
+
+                    <h3>Balneario La India — Río Patía</h3>
+
+                    <p>
+                        Reflejos sobre el agua, montañas verdes y un paisaje
+                        que invita a observar el entorno natural.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="balneario-india">
+                        Ver historia y fotografías <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- HACIENDA LA PACHUCA -->
+            <article class="destino destino-pachuca"
+                     id="destino-pachuca">
+
+                <button
+                    class="destino-imagen destino-imagen-alta"
+                    type="button"
+                    data-destino="hacienda-pachuca"
+                    aria-label="Conocer la Hacienda La Pachuca">
+
+                    <img
+                        src="../img/Hacienda la Pachuca.jpg"
+                        alt="Árbol de gran tamaño en la Hacienda La Pachuca"
+                        loading="lazy"
+                        data-imagen-base="Hacienda la Pachuca">
+
+                    <span class="destino-numero">05 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>PATRIMONIO NATURAL</span>
+                        <span>Hacienda La Pachuca</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">NATURALEZA</span>
+
+                    <h3>Hacienda La Pachuca</h3>
+
+                    <p>
+                        Un árbol imponente, de ramas extensas y grandes
+                        raíces, que sorprende a quienes lo contemplan.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="hacienda-pachuca">
+                        Descubrir su historia <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- RÍO DE GALÍNDEZ -->
+            <article class="destino destino-galindez"
+                     id="destino-galindez">
+
+                <button
+                    class="destino-imagen destino-imagen-ancha"
+                    type="button"
+                    data-destino="rio-galindez"
+                    aria-label="Conocer el Río de Galíndez">
+
+                    <img
+                        src="../img/puente Galindez.jpg"
+                        alt="Puente de Galíndez sobre el entorno fluvial"
+                        loading="lazy"
+                        data-imagen-base="puente Galindez">
+
+                    <span class="destino-numero">06 / 06</span>
+                    <span class="destino-flecha" aria-hidden="true">↗</span>
+
+                    <span class="destino-imagen-pie">
+                        <span>RÍOS Y COMUNIDAD</span>
+                        <span>Galíndez</span>
+                    </span>
+                </button>
+
+                <div class="destino-texto">
+                    <span class="destino-categoria">ENCUENTRO FLUVIAL</span>
+
+                    <h3>Río de Galíndez</h3>
+
+                    <p>
+                        Un lugar de encuentro comunitario en la confluencia
+                        de los ríos San Jorge y Huachicono.
+                    </p>
+
+                    <button class="destino-leer"
+                            type="button"
+                            data-destino="rio-galindez">
+                        Conocer este lugar <span>↗</span>
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- FRASE INTERMEDIA -->
+        <section class="lugares-frase">
+            <span class="lugares-frase-comilla" aria-hidden="true">“</span>
+
+            <p>
+                Un paisaje se contempla.
+                <em>Una historia se lleva consigo.</em>
+            </p>
+
+            <span class="lugares-frase-firma">RUMBO · PATÍA, CAUCA</span>
+        </section>
+
+
+        <!-- CIERRE -->
+        <section class="lugares-cierre">
+            <div class="lugares-cierre-texto">
+                <span class="lugares-etiqueta">
+                    EL VIAJE CONTINÚA
+                </span>
+
+                <h2>
+                    Patía tiene<br>
+                    mucho más<br>
+                    <em>por contar.</em>
+                </h2>
+
+                <p>
+                    Cada camino abre una posibilidad para conocer el
+                    territorio, valorar sus paisajes y acercarse a las
+                    historias que sus comunidades mantienen vivas.
+                </p>
+
+                <div class="lugares-cierre-enlaces">
+                    <a href="territorio.html">
+                        Volver a Territorio <span>↗</span>
+                    </a>
+
+                    <a href="artesania.html">
+                        Descubrir la artesanía <span>↗</span>
+                    </a>
+
+                    <a href="musica.html">
+                        Conocer la música <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lugares-cierre-decoracion" aria-hidden="true">
+                <span>R.</span>
+                <span>HISTORIAS QUE NOS CONECTAN</span>
+                <span>CAUCA · COLOMBIA</span>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="lugares-footer">
+        <a href="../index.html"
+           class="lugares-logo"
+           aria-label="Rumbo, volver al inicio">
+
+            <span class="lugares-logo-simbolo">R.</span>
+            <span>rumbo<span class="lugares-logo-punto">.</span></span>
+        </a>
+
+        <p>Plataforma de divulgación turística</p>
+
+        <span class="lugares-footer-lugar">
+            Ruta del Totumo · Patía, Cauca
+        </span>
+    </footer>
+
+
+    <!-- VENTANA DE HISTORIAS -->
+    <dialog class="historia-modal" id="historiaModal"
+            aria-labelledby="historiaTitulo">
+
+        <div class="historia-modal-contenido">
+
+            <button class="historia-cerrar"
+                    id="historiaCerrar"
+                    type="button"
+                    aria-label="Cerrar historia">
+                ×
+            </button>
+
+            <div class="historia-modal-imagen">
+                <img id="historiaImagen"
+                     src=""
+                     alt="">
+                <span id="historiaContador">01 / 01</span>
+
+                <button
+                    class="historia-flecha historia-anterior"
+                    id="historiaAnterior"
+                    type="button"
+                    aria-label="Fotografía anterior">
+                    ←
+                </button>
+
+                <button
+                    class="historia-flecha historia-siguiente"
+                    id="historiaSiguiente"
+                    type="button"
+                    aria-label="Fotografía siguiente">
+                    →
+                </button>
+            </div>
+
+            <div class="historia-modal-texto">
+                <span class="lugares-etiqueta" id="historiaCategoria">
+                    DESTINO
+                </span>
+
+                <h2 id="historiaTitulo">Historia del lugar</h2>
+
+                <p id="historiaDescripcion"></p>
+
+                <p class="historia-nota" id="historiaNota"></p>
+
+                <a href="territorio.html" class="historia-volver">
+                    Explorar Territorio <span>↗</span>
+                </a>
+            </div>
+
+        </div>
+    </dialog>
+
+</body>
+</html>

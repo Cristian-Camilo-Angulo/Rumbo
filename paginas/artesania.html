@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre la artesanía, las lámparas, los recipientes y los accesorios elaborados en totumo en Patía, Cauca.">
+    <title>Artesanía | Rumbo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/paginas.css">
+
+    <style>
+        /* BARRA SUPERIOR */
+        .artesania-pagina .barra-artesania {
+            position: relative;
+            z-index: 20;
+            min-height: 78px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 35px;
+            padding: 15px 7%;
+            border: 0;
+            color: #fff;
+            background: #365548;
+            box-shadow: none;
+        }
+
+        .artesania-pagina .marca-artesania {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            width: fit-content;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        .artesania-pagina .marca-artesania .simbolo-rumbo {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.9);
+            border-radius: 50%;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.3rem;
+            font-weight: normal;
+        }
+
+        .artesania-pagina .marca-artesania .rumbo-punto {
+            color: #d18a69;
+        }
+
+        .artesania-pagina .nav-artesania {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: clamp(14px, 2vw, 30px);
+        }
+
+        .artesania-pagina .nav-artesania > a,
+        .artesania-pagina .boton-descubrir {
+            position: relative;
+            color: #fff;
+            font-family: inherit;
+            font-size: .78rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color .25s ease;
+        }
+
+        .artesania-pagina .nav-artesania > a::after {
+            position: absolute;
+            right: 0;
+            bottom: -7px;
+            left: 0;
+            height: 1px;
+            content: "";
+            background: #d18a69;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+
+        .artesania-pagina .nav-artesania > a:hover,
+        .artesania-pagina .nav-artesania > a:focus-visible,
+        .artesania-pagina .boton-descubrir:hover {
+            color: #f0c6a8;
+        }
+
+        .artesania-pagina .nav-artesania > a:hover::after,
+        .artesania-pagina .nav-artesania > a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        /* MENÚ DESCUBRIR */
+        .artesania-pagina .descubrir-artesania {
+            position: relative;
+            align-self: center;
+        }
+
+        .artesania-pagina .boton-descubrir {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .artesania-pagina .flecha-descubrir {
+            display: inline-block;
+            transition: transform .25s ease;
+        }
+
+        .artesania-pagina .descubrir-artesania.abierto .flecha-descubrir {
+            transform: rotate(180deg);
+        }
+
+        .artesania-pagina .menu-descubrir {
+            position: absolute;
+            z-index: 100;
+            top: calc(100% + 12px);
+            right: 0;
+            width: 270px;
+            padding: 8px 0;
+            color: #37352f;
+            background: #f4efe5;
+            box-shadow: 0 12px 30px rgba(0,0,0,.16);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+        }
+
+        .artesania-pagina .descubrir-artesania.abierto .menu-descubrir {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .artesania-pagina .menu-descubrir a {
+            display: block;
+            padding: 15px 20px;
+            color: #37352f;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(55,53,47,.12);
+            transition: background .2s ease, padding-left .2s ease;
+        }
+
+        .artesania-pagina .menu-descubrir a:last-child {
+            border-bottom: 0;
+        }
+
+        .artesania-pagina .menu-descubrir a:hover {
+            padding-left: 25px;
+            background: #e8dfd0;
+        }
+
+        .artesania-pagina .menu-descubrir a span {
+            display: block;
+            margin-bottom: 5px;
+            font-size: .83rem;
+        }
+
+        .artesania-pagina .menu-descubrir a small {
+            display: block;
+            color: #858176;
+            font-size: .72rem;
+            line-height: 1.5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
+        .artesania-pagina section[id] {
+            scroll-margin-top: 20px;
+        }
+
+        /* RECIPIENTES: SE CONSERVA EL ESTILO */
+        .artesania-pagina .coleccion-recipient.es {
+            padding-block: 40px 100px;
+        }
+
+        .artesania-pagina .rejilla-recipient.es {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 8%;
+            align-items: center;
+        }
+
+        .artesania-pagina .foto-recipient.es {
+            position: relative;
+            height: 430px;
+            min-width: 0;
+            overflow: hidden;
+            isolation: isolate;
+            border-radius: 8px;
+            background: #e8e1d4;
+            box-shadow: 0 18px 38px rgba(40,42,36,.11),
+                        0 3px 8px rgba(40,42,36,.05);
+            outline: 1px solid rgba(255,255,255,.55);
+            outline-offset: -1px;
+            transform: translateZ(0);
+        }
+
+        .artesania-pagina .foto-recipient.es img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(.96) contrast(1.03);
+            transition: transform .9s cubic-bezier(.2,.7,.2,1),
+                        filter .7s ease;
+        }
+
+        .artesania-pagina .foto-recipient.es:hover img {
+            transform: scale(1.065);
+            filter: saturate(1.08) contrast(1.04);
+        }
+
+        .artesania-pagina .foto-recipient.es::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            inset: 45% 0 0;
+            pointer-events: none;
+            background: linear-gradient(transparent, rgba(20,29,23,.58));
+        }
+
+        .artesania-pagina .foto-recipient.es figcaption {
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 35px 20px 18px;
+            color: white;
+            background: linear-gradient(transparent, rgba(20,29,23,.45));
+            font-size: .8rem;
+            line-height: 1.6;
+        }
+
+        /* GALERÍA */
+        .artesania-pagina .galeria-artesania {
+            padding: 85px 5% 100px;
+            background: #f3efe6;
+        }
+
+        .artesania-pagina .cabecera-galeria {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 45px;
+        }
+
+        .artesania-pagina .cabecera-galeria h2 {
+            margin-bottom: 0;
+        }
+
+        .artesania-pagina .cabecera-galeria p {
+            max-width: 360px;
+            line-height: 1.8;
+        }
+
+        .artesania-pagina .galeria-foto-principal {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(280px,.9fr);
+            min-height: 480px;
+            background: #e8e2d6;
+        }
+
+        .artesania-pagina .galeria-imagen {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 530px;
+            min-width: 0;
+            overflow: hidden;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: zoom-in;
+            text-align: left;
+        }
+
+        .artesania-pagina .galeria-imagen img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            background: transparent;
+            transition: transform .8s cubic-bezier(.2,.7,.2,1),
+                        opacity .25s ease;
+        }
+
+        .artesania-pagina .galeria-imagen:hover img {
+            transform: scale(1.035);
+        }
+
+        .artesania-pagina .galeria-imagen img.cambiando-foto {
+            opacity: .35;
+        }
+
+        .artesania-pagina .galeria-imagen::after {
+            content: "";
+            position: absolute;
+            inset: 45% 0 0;
+            pointer-events: none;
+            background: linear-gradient(transparent, rgba(20,29,23,.48));
+        }
+
+        .artesania-pagina .indicador-ampliar {
+            position: absolute;
+            z-index: 2;
+            right: 14px;
+            bottom: 14px;
+            padding: 10px 13px;
+            color: white;
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(24,37,30,.88);
+            font-size: .8rem;
+            transition: background .3s ease, transform .3s ease;
+        }
+
+        .artesania-pagina .galeria-imagen:hover .indicador-ampliar {
+            background: var(--terracota);
+            transform: translateY(-3px);
+        }
+
+        .artesania-pagina .numero-foto {
+            position: absolute;
+            z-index: 2;
+            left: 22px;
+            bottom: 22px;
+            color: white;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 8px #000;
+        }
+
+        .artesania-pagina .galeria-navegacion {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(28px,5vw,70px);
+            min-width: 0;
+        }
+
+        .artesania-pagina .galeria-progreso {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(40,42,36,.16);
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .artesania-pagina .galeria-puntos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 25px;
+        }
+
+        .artesania-pagina .galeria-punto {
+            width: 28px;
+            height: 3px;
+            padding: 0;
+            border: 0;
+            background: #c6bfb2;
+            cursor: pointer;
+            transition: width .25s ease, background .25s ease;
+        }
+
+        .artesania-pagina .galeria-punto.activa {
+            width: 48px;
+            background: #bd7655;
+        }
+
+        .artesania-pagina .galeria-botones {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .artesania-pagina .boton-galeria {
+            min-height: 42px;
+            padding: 10px 13px;
+            border: 1px solid var(--verde);
+            border-radius: 2px;
+            background: transparent;
+            color: var(--verde);
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+
+        .artesania-pagina .boton-galeria:hover,
+        .artesania-pagina .boton-galeria:focus-visible {
+            color: white;
+            background: var(--verde);
+            transform: translateY(-2px);
+        }
+
+        .artesania-pagina .descripcion-galeria {
+            display: none !important;
+        }
+
+        @media (max-width: 900px) {
+            .artesania-pagina .barra-artesania {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .artesania-pagina .nav-artesania {
+                justify-content: flex-start;
+                gap: 10px 22px;
+            }
+
+            .artesania-pagina .menu-descubrir {
+                right: auto;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .artesania-pagina .rejilla-recipient.es,
+            .artesania-pagina .galeria-foto-principal {
+                grid-template-columns: 1fr;
+            }
+
+            .artesania-pagina .foto-recipient.es {
+                height: 380px;
+            }
+
+            .artesania-pagina .galeria-imagen {
+                height: min(520px,110vw);
+            }
+
+            .artesania-pagina .galeria-navegacion {
+                padding: 30px;
+            }
+
+            .artesania-pagina .cabecera-galeria {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .artesania-pagina .barra-artesania {
+                padding: 18px 5%;
+            }
+
+            .artesania-pagina .nav-artesania {
+                gap: 8px 16px;
+            }
+
+            .artesania-pagina .nav-artesania > a,
+            .artesania-pagina .boton-descubrir {
+                font-size: .74rem;
+            }
+
+            .artesania-pagina .marca-artesania {
+                font-size: 1.35rem;
+            }
+
+            .artesania-pagina .menu-descubrir {
+                width: min(270px,85vw);
+            }
+
+            .artesania-pagina .foto-recipient.es {
+                height: 300px;
+            }
+
+            .artesania-pagina .galeria-navegacion {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="artesania-pagina">
+
+<header class="barra-artesania" id="inicio-pagina">
+    <a class="marca-artesania" href="#inicio-pagina" aria-label="Rumbo, inicio de Artesanía">
+        <span class="simbolo-rumbo">R.</span>
+        <span>rumbo<span class="rumbo-punto">.</span></span>
+    </a>
+
+    <nav class="nav-artesania" aria-label="Secciones de Artesanía">
+        <a href="../index.html">Inicio</a>
+        <a href="#portada-artesania">La ruta</a>
+        <a href="#trabajo-artesanal">El oficio</a>
+        <a href="#objetos-artesanales">Recipientes</a>
+        <a href="#lamparas-artesanales">Lámparas</a>
+        <a href="#galeria-artesania">Galería</a>
+
+        <div class="descubrir-artesania">
+            <button type="button" class="boton-descubrir" aria-expanded="false" aria-controls="menu-descubrir">
+                Descubrir <span class="flecha-descubrir">⌄</span>
+            </button>
+            <div class="menu-descubrir" id="menu-descubrir">
+                <a href="artesania.html">
+                    <span>Artesanía</span>
+                    <small>Oficios y saberes del totumo</small>
+                </a>
+                <a href="musica.html">
+                    <span>Música y tradición</span>
+                    <small>Violín, bambuco y danza</small>
+                </a>
+                <a href="sabores.html">
+                    <span>Sabores</span>
+                    <small>Gastronomía y memoria patiana</small>
+                </a>
+                <a href="territorio.html">
+                    <span>Territorio</span>
+                    <small>Paisajes y lugares por conocer</small>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- PORTADA -->
+    <section class="portada-artesania" id="portada-artesania">
+        <div class="texto-portada">
+            <span class="etiqueta-artesania">RUTA DEL TOTUMO · PATÍA, CAUCA</span>
+            <h1>La belleza de lo <em>hecho a mano.</em></h1>
+            <p>
+                Hay materiales que guardan una historia y manos capaces de
+                transformarlos en objetos únicos. Descubre el universo
+                artesanal del totumo y las expresiones creativas que forman
+                parte de la identidad cultural de Patía.
+            </p>
+            <a class="boton-artesania" href="#trabajo-artesanal">
+                Explorar la artesanía ↓
+            </a>
+        </div>
+
+        <figure class="portada-foto">
+            <img src="../img/9.jpeg" alt="Artesano trabajando en su taller rodeado de piezas artesanales">
+            <figcaption>Patía · Cauca <span class="nombre-artesano">Artesano: Guillermo Gamboa</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="introduccion-artesania" id="introduccion-artesania">
+        <div class="contenedor-artesania rejilla-intro">
+            <div>
+                <span class="etiqueta-artesania">Materia y creatividad</span>
+                <h2>De la naturaleza a una pieza artesanal.</h2>
+            </div>
+            <div class="texto-intro">
+                <p>
+                    El totumo es el punto de encuentro de esta experiencia.
+                    Sus formas permiten crear recipientes, objetos decorativos
+                    y piezas que muestran distintas maneras de trabajar con
+                    un material natural.
+                </p>
+                <p>
+                    Cada fotografía ofrece una mirada diferente: las personas
+                    que trabajan el material, los objetos terminados,
+                    la iluminación y los accesorios que amplían sus
+                    posibilidades creativas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRABAJO ARTESANAL -->
+    <section class="bloque-editorial contenedor-artesania" id="trabajo-artesanal">
+        <div class="rejilla-editorial">
+            <figure class="foto-editorial foto-alta">
+                <img src="../img/7.jpeg" alt="Artesana en su espacio de trabajo, rodeada de objetos de totumo" loading="lazy">
+                <figcaption><span class="nombre-artesano">Artesana: Ayda Nubia Muñoz</span></figcaption>
+            </figure>
+            <div class="texto-editorial">
+                <span class="numero-editorial">01 — Oficio artesanal</span>
+                <h2>Detrás de cada pieza hay una historia.</h2>
+                <p>
+                    La artesanía se descubre también a través de las personas
+                    que trabajan el material y de los espacios donde toman
+                    forma los objetos.
+                </p>
+                <p>
+                    Esta fotografía nos acerca al entorno artesanal y a la
+                    variedad de piezas que pueden encontrarse en el taller.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL MATERIAL -->
+    <section class="bloque-editorial contenedor-artesania" id="material-artesanal">
+        <div class="rejilla-editorial invertida">
+            <figure class="foto-editorial foto-alta">
+                <img src="../img/21.jpeg" alt="Artesana sosteniendo una pieza de totumo" loading="lazy">
+                <figcaption> <span class="nombre-artesano">Martha Villafañe · Bailadora de bambuco</span></figcaption>
+            </figure>
+            <div class="texto-editorial">
+                <span class="numero-editorial">02 — El material</span>
+                <h2>Una forma natural, nuevas posibilidades.</h2>
+                <p>
+                    Antes de convertirse en un objeto, el totumo forma parte
+                    del paisaje. Su forma y su estructura permiten imaginar
+                    diferentes posibilidades de creación.
+                </p>
+                <p>
+                    La imagen pone en primer plano el material y a la persona
+                    que lo presenta, conectando el oficio artesanal con
+                    quienes lo mantienen vivo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO CREATIVO -->
+    <section class="bloque-editorial contenedor-artesania" id="proceso-creativo">
+        <div class="rejilla-editorial">
+            <figure class="foto-editorial foto-alta">
+                <img src="../img/14.jpeg" alt="Artesana trabajando con piezas de totumo en su taller" loading="lazy">
+                <figcaption><span class="nombre-artesano">Artesana: Ayda Nubia Muñoz</span></figcaption>
+            </figure>
+            <div class="texto-editorial">
+                <span class="numero-editorial">03 — El proceso creativo</span>
+                <h2>El valor está también en el proceso.</h2>
+                <p>
+                    Observar el trabajo artesanal permite apreciar los
+                    detalles, las formas y la dedicación que intervienen
+                    en la elaboración de una pieza.
+                </p>
+                <p>
+                    Más que mostrar un objeto terminado, esta mirada destaca
+                    el trabajo que hay detrás de su apariencia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJETOS ARTESANALES -->
+    <section class="coleccion-recipient es contenedor-artesania" id="objetos-artesanales">
+        <div class="rejilla-recipient es">
+            <div class="texto-editorial">
+                <span class="numero-editorial">04 — Objetos y formas</span>
+                <h2>Objetos que conservan la esencia del material.</h2>
+                <p>
+                    Los recipientes permiten apreciar cómo las formas del
+                    totumo se convierten en objetos decorativos y funcionales.
+                    Sus tonos y acabados dan personalidad a cada pieza.
+                </p>
+            </div>
+            <figure class="foto-recipient es">
+                <img src="../img/6.jpeg" alt="Colección de recipientes artesanales de totumo" loading="lazy">
+                <figcaption>Recipientes artesanales · Colección de piezas</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- DETALLE DEL MATERIAL -->
+    <section class="detalle-material" id="detalle-material">
+        <div class="detalle-material-imagen">
+            <img src="../img/16.jpeg" alt="Totumos abiertos que permiten observar sus características naturales" loading="lazy">
+        </div>
+        <div class="detalle-material-texto">
+            <span class="etiqueta-artesania">Una mirada de cerca</span>
+            <h2>Conocer el material cambia la manera de mirar la pieza.</h2>
+            <p>
+                El acercamiento al totumo permite observar su interior,
+                su estructura y las características naturales que forman
+                parte de su transformación artesanal.
+            </p>
+        </div>
+    </section>
+
+    <!-- LÁMPARAS -->
+    <section class="bloque-editorial contenedor-artesania" id="lamparas-artesanales">
+        <div class="rejilla-editorial invertida">
+            <figure class="foto-editorial foto-lampara">
+                <img src="../img/lampara2.PNG" alt="Lámpara artesanal de totumo con iluminación cálida" loading="lazy">
+                <figcaption>Lámpara artesanal · Luz cálida</figcaption>
+            </figure>
+            <div class="texto-editorial">
+                <span class="numero-editorial">05 — Luz y diseño</span>
+                <h2>Cuando la luz dibuja nuevas formas.</h2>
+                <p>
+                    Las perforaciones y los diseños de estas lámparas
+                    producen juegos de luz y sombra que transforman
+                    el ambiente.
+                </p>
+                <p>
+                    Cada composición revela una forma diferente de combinar
+                    el material, la iluminación y el diseño decorativo.
+                </p>
+                <a class="enlace-galeria" href="#galeria-artesania">
+                    Explorar la colección de lámparas y accesorios →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="galeria-artesania" id="galeria-artesania">
+        <div class="contenedor-artesania">
+            <div class="cabecera-galeria">
+                <div>
+                    <span class="etiqueta-artesania">Detalles que cuentan</span>
+                    <h2>Un universo de formas, luz y color.</h2>
+                </div>
+                <p>
+                    Explora esta selección de fotografías y elige la imagen
+                    que quieras observar.
+                </p>
+            </div>
+
+            <div class="galeria-foto-principal">
+                <button class="galeria-imagen" id="abrir-foto" type="button" aria-label="Ampliar fotografía actual">
+                    <img id="foto-principal" src="../img/chica1.PNG" alt="Accesorios artesanales">
+                    <span class="indicador-ampliar">Ampliar fotografía ↗</span>
+                    <span class="numero-foto" id="numero-foto">01 / 09</span>
+                </button>
+
+                <div class="galeria-navegacion">
+                    <div class="galeria-progreso">
+                        <span id="contador-fotos">01 — 09</span>
+                        <div class="galeria-puntos" id="miniaturas" aria-label="Seleccionar fotografía"></div>
+                    </div>
+                    <div class="galeria-botones">
+                        <button type="button" class="boton-galeria" id="anterior">← Anterior</button>
+                        <button type="button" class="boton-galeria" id="siguiente">Siguiente →</button>
+                        <button type="button" class="boton-galeria" id="pausar" aria-pressed="false">Ⅱ Pausar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="cierre-artesania" id="continuar-explorando">
+        <span class="etiqueta-artesania etiqueta-clara">Sigue explorando</span>
+        <h2>Patía tiene muchas historias por descubrir.</h2>
+        <p>
+            La artesanía es una puerta de entrada a la cultura del territorio.
+            Continúa descubriendo sus expresiones musicales y sus lugares
+            de interés con Rumbo.
+        </p>
+        <div class="enlaces-continuacion">
+            <a href="#inicio-pagina" class="boton-cierre">Volver al inicio ↑</a>
+        </div>
+    </section>
+</main>
+
+
+<footer class="pie-artesania">
+    <a class="marca-pie" href="../index.html" aria-label="Rumbo">
+        <span class="simbolo-pie">R.</span>
+        <span>rumbo<span class="punto-pie">.</span></span>
+    </a>
+
+    <span class="texto-pie">
+        Plataforma de divulgación turística
+    </span>
+
+    <span class="ubicacion-pie">
+        Ruta del Totumo · Patía, Cauca
+    </span>
+</footer>
+
+
+<!-- VISOR PARA AMPLIAR IMÁGENES -->
+<div class="visor-imagen" id="visor" role="dialog" aria-modal="true" aria-label="Fotografía ampliada" hidden>
+    <button type="button" id="cerrar-visor" class="cerrar-visor" aria-label="Cerrar fotografía">✕</button>
+    <img id="imagen-ampliada" src="../img/chica1.PNG" alt="Fotografía ampliada">
+    <div class="visor-pie">
+        <h3 id="visor-titulo"></h3>
+        <p id="visor-descripcion"></p>
+    </div>
+</div>
+
+<script>
+(() => {
+    const fotos = [
+        { src: "../img/chica1.PNG", titulo: "Accesorios de formas y color" },
+        { src: "../img/Chica2.PNG", titulo: "Diseño y detalle" },
+        { src: "../img/Chica3.PNG", titulo: "Accesorios con identidad visual" },
+        { src: "../img/chica4.PNG", titulo: "Geometría y expresión" },
+        { src: "../img/lampara3.jpeg", titulo: "Luz entre perforaciones" },
+        { src: "../img/lampara4.jpeg", titulo: "Formas iluminadas" },
+        { src: "../img/lampara5.jpeg", titulo: "Un juego de luces y sombras" },
+        { src: "../img/lamparas.PNG", titulo: "Una colección de lámparas" },
+        { src: "../img/lampara2.PNG", titulo: "Lámpara artesanal" }
+    ];
+
+    const $ = id => document.getElementById(id);
+    const principal = $("foto-principal");
+    const contador = $("contador-fotos");
+    const numeroFoto = $("numero-foto");
+    const botonPausa = $("pausar");
+    const miniaturas = $("miniaturas");
+    const visor = $("visor");
+
+    let indice = 0;
+    let intervalo = null;
+    let pausado = false;
+    let focoAnterior = null;
+
+    const reducirMovimiento = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    function mostrar(nuevoIndice) {
+        indice = (nuevoIndice + fotos.length) % fotos.length;
+        const actual = fotos[indice];
+        principal.classList.add("cambiando-foto");
+
+        window.setTimeout(() => {
+            principal.src = actual.src;
+            principal.alt = actual.titulo;
+
+            numeroFoto.textContent =
+                `${String(indice + 1).padStart(2, "0")} / ${String(fotos.length).padStart(2, "0")}`;
+
+            contador.textContent =
+                `${String(indice + 1).padStart(2, "0")} — ${String(fotos.length).padStart(2, "0")}`;
+
+            miniaturas.querySelectorAll("button").forEach((boton, i) => {
+                const activa = i === indice;
+                boton.classList.toggle("activa", activa);
+                boton.setAttribute("aria-pressed", String(activa));
+            });
+
+            principal.classList.remove("cambiando-foto");
+        }, 150);
+    }
+
+    fotos.forEach((foto, i) => {
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "galeria-punto";
+        boton.setAttribute("aria-label", `Ver fotografía ${i + 1}: ${foto.titulo}`);
+        boton.setAttribute("aria-pressed", String(i === 0));
+
+        boton.addEventListener("click", () => {
+            mostrar(i);
+            iniciar();
+        });
+
+        miniaturas.appendChild(boton);
+    });
+
+    function iniciar() {
+        clearInterval(intervalo);
+        if (!pausado && !reducirMovimiento && !document.hidden && visor.hidden) {
+            intervalo = setInterval(() => mostrar(indice + 1), 3500);
+        }
+    }
+
+    $("anterior").addEventListener("click", () => {
+        mostrar(indice - 1);
+        iniciar();
+    });
+
+    $("siguiente").addEventListener("click", () => {
+        mostrar(indice + 1);
+        iniciar();
+    });
+
+    botonPausa.addEventListener("click", () => {
+        pausado = !pausado;
+        botonPausa.textContent = pausado ? "▶ Reanudar" : "Ⅱ Pausar";
+        botonPausa.setAttribute("aria-pressed", String(pausado));
+        iniciar();
+    });
+
+    function abrirVisor() {
+        focoAnterior = document.activeElement;
+        $("imagen-ampliada").src = fotos[indice].src;
+        $("imagen-ampliada").alt = fotos[indice].titulo;
+        $("visor-titulo").textContent = fotos[indice].titulo;
+        $("visor-descripcion").textContent = "";
+        visor.hidden = false;
+        visor.classList.add("abierto");
+        $("cerrar-visor").focus();
+        clearInterval(intervalo);
+    }
+
+    function cerrarVisor() {
+        visor.classList.remove("abierto");
+        visor.hidden = true;
+        if (focoAnterior) focoAnterior.focus();
+        iniciar();
+    }
+
+    $("abrir-foto").addEventListener("click", abrirVisor);
+    $("cerrar-visor").addEventListener("click", cerrarVisor);
+
+    visor.addEventListener("click", evento => {
+        if (evento.target === visor) cerrarVisor();
+    });
+
+    document.addEventListener("keydown", evento => {
+        if (evento.key === "Escape" && !visor.hidden) {
+            cerrarVisor();
+        }
+        if (visor.hidden && evento.key === "ArrowRight") {
+            mostrar(indice + 1);
+            iniciar();
+        }
+        if (visor.hidden && evento.key === "ArrowLeft") {
+            mostrar(indice - 1);
+            iniciar();
+        }
+    });
+
+    document.addEventListener("visibilitychange", iniciar);
+    mostrar(0);
+    iniciar();
+})();
+</script>
+
+<script>
+(() => {
+    const contenedor = document.querySelector(".descubrir-artesania");
+    const boton = document.querySelector(".boton-descubrir");
+    if (!contenedor || !boton) return;
+
+    boton.addEventListener("click", () => {
+        const abierto = contenedor.classList.toggle("abierto");
+        boton.setAttribute("aria-expanded", String(abierto));
+    });
+
+    document.addEventListener("click", evento => {
+        if (!contenedor.contains(evento.target)) {
+            contenedor.classList.remove("abierto");
+            boton.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    document.addEventListener("keydown", evento => {
+        if (evento.key === "Escape") {
+            contenedor.classList.remove("abierto");
+            boton.setAttribute("aria-expanded", "false");
+            boton.focus();
+        }
+    });
+})();
+</script>
+</body>
+</html>
