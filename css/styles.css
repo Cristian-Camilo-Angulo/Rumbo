@@ -1,0 +1,521 @@
+:root{--verde:#24392d;--verde-oscuro:#18251e;--crema:#f3efe6;--blanco:#fffdf8;--terracota:#bd7655;--texto:#282a24;--texto-suave:#77776e;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--margen:clamp(22px,7vw,110px);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+body{background:var(--crema);color:var(--texto);font-family:var(--sans);overflow-x:hidden;}
+img,video{display:block;width:100%;}
+img{height:100%;object-fit:cover;}
+a{color:inherit;text-decoration:none;}
+button,a{-webkit-tap-highlight-color:transparent;}
+::selection{background:var(--terracota);color:white;}
+
+/* NAVEGACIÓN */
+.encabezado{position:absolute;z-index:10;top:0;left:0;width:100%;padding:28px var(--margen);display:flex;justify-content:space-between;align-items:center;gap:24px;color:white;border-bottom:1px solid rgb(255 255 255 / 22%);}
+.marca{display:inline-flex;align-items:center;gap:10px;font-size:25px;font-weight:700;letter-spacing:-1.5px;flex-shrink:0;}
+.marca-simbolo{width:35px;height:35px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;font-family:var(--serif);font-size:19px;}
+.marca-punto{color:var(--terracota);}
+.navegacion{display:flex;gap:clamp(18px,3vw,42px);align-items:center;flex-wrap:wrap;}
+.navegacion a{font-size:12px;transition:opacity .3s ease;}
+.navegacion a:hover{opacity:.65;}
+
+/* PORTADA */
+.portada{position:relative;min-height:760px;height:100svh;max-height:1100px;background:var(--verde-oscuro);color:white;display:flex;align-items:center;overflow:hidden;}
+.portada-imagen,.portada-capa{position:absolute;inset:0;width:100%;height:100%;}
+.portada-imagen{object-position:center;animation:aparecer-imagen 1.4s ease both;}
+.portada-capa{background:linear-gradient(90deg,rgb(15 25 19 / 78%),rgb(15 25 19 / 28%) 68%,rgb(15 25 19 / 14%)),linear-gradient(0deg,rgb(15 25 19 / 60%),transparent 40%);}
+.portada-superior,.portada-inferior{position:absolute;left:var(--margen);right:var(--margen);display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:2px;}
+.portada-superior{top:125px;}
+.portada-inferior{bottom:35px;}
+.portada-inferior a{font-size:23px;}
+.portada-contenido{position:relative;z-index:1;width:min(850px,85%);margin-left:var(--margen);padding-top:95px;animation:subir .9s .15s ease both;}
+.sobretitulo{font-size:10px;font-weight:600;letter-spacing:3px;line-height:1.8;}
+.portada-contenido>.lema-portada{display:table;max-width:100%;padding:0;margin-bottom:22px;background:transparent;color:var(--blanco);font-size:10px;font-weight:600;letter-spacing:2.4px;line-height:1.8;text-shadow:0 1px 8px rgb(0 0 0 / 35%);}
+.portada h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-2px;line-height:1.08;}
+.portada h1{margin:18px 0 23px;font-size:clamp(52px,7.5vw,105px);}
+.portada h1 em,h2 em{font-weight:400;color:var(--terracota);}
+.portada-descripcion{max-width:450px;color:rgb(255 255 255 / 83%);font-size:14px;line-height:1.9;}
+.boton-principal,.boton-claro{display:inline-flex;justify-content:space-between;align-items:center;gap:30px;margin-top:30px;padding:16px 20px;background:var(--terracota);color:white;font-size:11px;transition:transform .3s ease,background .3s ease;}
+.boton-principal:hover,.boton-claro:hover{transform:translateY(-4px);background:#a96244;}
+
+/* INTRODUCCIÓN */
+.seccion{padding:125px var(--margen);}
+.introduccion{display:grid;grid-template-columns:.65fr 1.1fr 1fr;gap:45px;align-items:start;}
+.introduccion-etiqueta{display:flex;flex-direction:column;gap:12px;color:var(--texto-suave);font-size:9px;letter-spacing:2px;}
+.numero-seccion{color:var(--terracota);font-family:var(--serif);font-size:30px;}
+.texto-verde{color:var(--verde);}
+.introduccion h2,.cabecera-seccion h2,.video-texto h2,.cierre h2{margin:20px 0;font-size:clamp(36px,4.3vw,60px);}
+.introduccion-contenido{padding-bottom:35px;}
+.texto-introduccion,.cabecera-descripcion,.experiencia-info p,.video-texto>p:not(.sobretitulo){color:var(--texto-suave);font-size:13px;line-height:2;}
+.texto-introduccion{max-width:470px;}
+.enlace-texto{display:inline-block;margin-top:27px;padding-bottom:7px;border-bottom:1px solid var(--terracota);font-size:11px;}
+.enlace-texto span{margin-left:12px;}
+.imagen-marco{position:relative;min-height:370px;height:430px;overflow:hidden;}
+.imagen-marco img{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.imagen-marco:hover img{transform:scale(1.06);}
+.imagen-nota{position:absolute;bottom:15px;left:15px;padding:9px 12px;background:var(--crema);font-size:9px;letter-spacing:1px;}
+
+/* EXPERIENCIAS: DISEÑO MEJORADO DE LAS CUATRO IMÁGENES */
+.experiencias{position:relative;overflow:hidden;background:#e8e2d6;}
+.cabecera-seccion{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;}
+.cabecera-seccion h2{margin-bottom:0;}
+.cabecera-descripcion{max-width:330px;}
+.rejilla-experiencias{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:76px 38px;align-items:start;}
+.experiencia{min-width:0;position:relative;transition:transform .45s cubic-bezier(.2,.7,.2,1);}
+.experiencia-grande .experiencia-foto{height:530px;}
+.experiencia-desplazada{margin-top:130px;}
+.experiencia-desplazada .experiencia-foto{height:380px;}
+.experiencia-tercera{width:100%;margin-top:0;grid-column:1;}
+.experiencia-tercera .experiencia-foto{height:340px;}
+.experiencia-foto{position:relative;overflow:hidden;isolation:isolate;border-radius:8px;background:#d9d1c3;box-shadow:0 18px 38px rgb(40 42 36 / 10%),0 3px 8px rgb(40 42 36 / 5%);outline:1px solid rgb(255 255 255 / 55%);outline-offset:-1px;transform:translateZ(0);}
+.experiencia-foto img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center;filter:saturate(.96) contrast(1.03);transform:scale(1.001);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .7s ease;}
+.experiencia-foto::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgb(20 29 23 / 0%) 52%,rgb(20 29 23 / 58%) 100%),linear-gradient(0deg,rgb(20 29 23 / 7%),transparent 40%);opacity:.9;transition:opacity .45s ease;}
+.experiencia-foto::after{content:"↗";position:absolute;z-index:2;top:18px;right:18px;width:42px;height:42px;display:grid;place-items:center;border:1px solid rgb(255 255 255 / 75%);border-radius:50%;background:rgb(243 239 230 / 92%);color:var(--verde-oscuro);font-size:19px;opacity:0;transform:translateY(7px) rotate(-12deg);transition:opacity .35s ease,transform .35s ease,background .35s ease,color .35s ease;}
+.experiencia:hover{transform:translateY(-5px);}
+.experiencia:hover .experiencia-foto img{transform:scale(1.065);filter:saturate(1.08) contrast(1.04);}
+.experiencia:hover .experiencia-foto::before{opacity:1;}
+.experiencia:hover .experiencia-foto::after{opacity:1;transform:translateY(0) rotate(0);background:var(--terracota);color:white;}
+.experiencia-numero{position:absolute;z-index:3;left:19px;bottom:19px;display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid rgb(255 255 255 / 34%);border-radius:2px;background:rgb(24 37 30 / 25%);color:white;font-size:9px;font-weight:600;letter-spacing:1.8px;line-height:1.5;text-shadow:0 1px 8px rgb(0 0 0 / 35%);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}
+.experiencia-info{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;padding-top:25px;}
+.experiencia-info>div{flex:1;min-width:0;}
+.experiencia-info h3{margin-bottom:16px;font-family:var(--serif);font-size:clamp(24px,2.1vw,30px);font-weight:400;line-height:1.3;letter-spacing:-.5px;transition:color .3s ease;}
+.experiencia:hover .experiencia-info h3{color:var(--verde);}
+.experiencia-info p{max-width:450px;color:var(--texto-suave);font-size:13px;line-height:2.1;}
+.flecha-decorativa{flex-shrink:0;color:var(--terracota);font-size:23px;transition:transform .3s ease;}
+.experiencia:hover .flecha-decorativa{transform:translate(4px,-4px);}
+.experiencia-tercera .experiencia-foto{display:block;overflow:hidden;background:#d9d1c3;}
+.experiencia-tercera .experiencia-foto img{object-fit:cover;object-position:center;}
+.experiencia-territorio{grid-column:2;margin-top:70px;}
+.experiencia-territorio .experiencia-foto{height:360px;}
+.experiencia-territorio .experiencia-foto img{object-fit:cover;object-position:center;}
+@media (prefers-reduced-motion:reduce){.experiencia,.experiencia-foto img,.experiencia-foto::before,.experiencia-foto::after,.experiencia-info h3,.flecha-decorativa{transition:none;}.experiencia:hover,.experiencia:hover .experiencia-foto img{transform:none;}}
+
+/* RECORRIDO */
+.itinerario{position:relative;min-height:570px;display:flex;align-items:center;overflow:hidden;background:var(--verde-oscuro);color:white;}
+.itinerario-fondo{position:absolute;inset:0;background:linear-gradient(90deg,rgb(19 31 24 / 94%),rgb(19 31 24 / 65%) 60%,rgb(19 31 24 / 20%)),url("../img/18.jpeg") center/cover no-repeat;transition:transform 1s ease;}
+.itinerario:hover .itinerario-fondo{transform:scale(1.025);}
+.itinerario-contenido{position:relative;max-width:670px;padding:100px var(--margen);}
+.itinerario h2{margin:25px 0;font-size:clamp(43px,5.5vw,72px);}
+.itinerario-contenido>p:not(.sobretitulo){max-width:470px;color:rgb(255 255 255 / 76%);font-size:13px;line-height:2;}
+.boton-claro{background:var(--crema);color:var(--verde-oscuro);}
+.itinerario-nota{position:absolute;right:var(--margen);bottom:35px;display:flex;gap:30px;font-size:9px;letter-spacing:2px;}
+
+/* GALERÍA CULTURAL INTERACTIVA */
+.galeria-cultural{padding:120px var(--margen);background:#f3efe6;color:#282a24;}
+.galeria-cultural-cabecera{display:grid;grid-template-columns:1.2fr .8fr;align-items:end;gap:20px 60px;margin-bottom:55px;}
+.galeria-cultural-cabecera .sobretitulo{grid-column:1/-1;color:var(--verde);}
+.galeria-cultural-cabecera h2{max-width:780px;font-family:var(--serif);font-size:clamp(38px,5vw,66px);font-weight:400;letter-spacing:-1.8px;line-height:1.12;}
+.galeria-cultural-cabecera h2 em{color:var(--terracota);}
+.galeria-cultural-cabecera>p:last-child{max-width:350px;color:var(--texto-suave);font-size:13px;line-height:1.9;}
+.relato-cultural{display:grid;grid-template-columns:1.05fr .95fr;min-height:480px;background:#e8e2d6;transition:opacity .25s ease;}
+.relato-cultural.cambiando{opacity:.5;}
+.relato-imagen{position:relative;min-height:480px;overflow:hidden;background:#d4ccbe;}
+.relato-imagen img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s ease,opacity .25s ease;}
+.relato-cultural:hover .relato-imagen img{transform:scale(1.025);}
+#relato-numero{position:absolute;left:22px;bottom:22px;color:white;font-size:9px;letter-spacing:2px;text-shadow:0 1px 8px #000;}
+.relato-contenido{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(28px,5vw,75px);}
+.relato-contenido .sobretitulo{color:var(--terracota);font-size:9px;}
+.relato-contenido h3{margin:22px 0 18px;font-family:var(--serif);font-size:clamp(32px,3.4vw,48px);font-weight:400;line-height:1.15;}
+#relato-texto{max-width:480px;color:var(--texto-suave);font-size:13px;line-height:2;}
+.relato-controles{display:flex;justify-content:space-between;align-items:center;gap:22px;width:100%;margin-top:35px;padding-top:20px;border-top:1px solid rgb(40 42 36 / 16%);}
+.relato-progreso{font-size:10px;letter-spacing:1px;white-space:nowrap;}
+.relato-progreso i{padding:0 7px;color:var(--terracota);font-style:normal;}
+.relato-siguiente{border:0;border-bottom:1px solid var(--terracota);padding:0 0 9px;background:transparent;color:var(--texto);font:inherit;font-size:11px;cursor:pointer;transition:color .25s ease,transform .25s ease;}
+.relato-siguiente span{margin-left:14px;color:var(--terracota);}
+.relato-siguiente:hover{color:var(--terracota);transform:translateX(3px);}
+.relato-puntos{display:flex;gap:9px;margin-top:25px;}
+.relato-punto{width:28px;height:3px;padding:0;border:0;background:#c6bfb2;cursor:pointer;transition:width .25s ease,background .25s ease;}
+.relato-punto.activo{width:48px;background:var(--terracota);}
+.credito-fotografico{margin-top:25px;color:var(--texto-suave);font-size:10px;text-align:right;}
+
+/* VIDEO */
+.video-seccion{padding:100px var(--margen);background:var(--verde-oscuro);color:white;}
+.video-texto{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:45px;}
+.video-texto h2{margin-bottom:15px;}
+.video-texto>p:not(.sobretitulo){max-width:520px;color:rgb(255 255 255 / 68%);}
+.video-marco{width:100%;aspect-ratio:16/9;max-height:760px;background:#101712;overflow:hidden;}
+.video-marco video{height:100%;object-fit:contain;}
+.video-credito{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:25px;padding:22px 0 8px;border-top:1px solid rgb(255 255 255 / 20%);}
+.video-credito-etiqueta{color:var(--terracota);font-size:9px;letter-spacing:2px;}
+.video-credito p{color:var(--blanco);font-family:var(--serif);font-size:clamp(18px,2vw,24px);line-height:1.5;}
+.video-credito-autora{color:rgb(255 255 255 / 72%);font-size:12px;line-height:1.7;}
+
+/* CIERRE */
+.cierre{padding:120px 20px;background:#e8e2d6;text-align:center;}
+.cierre h2{margin:25px 0 0;font-size:clamp(40px,6vw,75px);}
+
+/* PIE DE PÁGINA */
+.pie-pagina{padding:35px var(--margen);display:flex;align-items:center;justify-content:space-between;gap:25px;background:var(--verde-oscuro);color:white;}
+.marca-pie{font-size:21px;}
+.pie-pagina p{color:rgb(255 255 255 / 65%);font-size:10px;}
+
+/* ANIMACIONES */
+@keyframes subir{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+@keyframes aparecer-imagen{from{opacity:.55;transform:scale(1.035);}to{opacity:1;transform:scale(1);}}
+
+/* TABLET */
+@media (max-width:1000px){
+.introduccion{grid-template-columns:.3fr 1fr;gap:30px;}
+.introduccion-etiqueta{grid-column:1/-1;flex-direction:row;align-items:center;}
+.introduccion-imagen{height:390px;}
+.rejilla-experiencias{gap:50px 25px;}
+.experiencia-grande .experiencia-foto{height:420px;}
+.experiencia-desplazada .experiencia-foto{height:320px;}
+.experiencia-tercera .experiencia-foto,.experiencia-territorio .experiencia-foto{height:320px;}
+.experiencia-territorio{grid-column:1;margin-top:0;}
+.galeria-cultural-cabecera{grid-template-columns:1fr;}
+.galeria-cultural-cabecera>p:last-child{max-width:550px;}
+.relato-cultural{min-height:400px;}
+.relato-imagen{min-height:400px;}
+.pie-pagina{flex-wrap:wrap;}
+}
+
+/* MÓVILES */
+@media (max-width:650px){
+:root{--margen:22px;}
+.encabezado{padding-top:18px;padding-bottom:18px;}
+.marca{font-size:22px;}
+.navegacion{position:absolute;top:75px;left:0;right:0;padding:13px 20px;justify-content:center;gap:19px;background:rgb(24 37 30 / 94%);}
+.navegacion a{font-size:10px;}
+.portada{min-height:690px;height:94svh;}
+.portada-superior{top:125px;font-size:8px;letter-spacing:1px;}
+.portada-superior span:last-child{display:none;}
+.portada-contenido{width:calc(100% - 44px);margin-left:var(--margen);padding-top:100px;}
+.portada-contenido>.lema-portada{font-size:8px;letter-spacing:1.5px;margin-bottom:17px;}
+.portada h1{font-size:clamp(48px,12vw,68px);letter-spacing:-1.8px;}
+.portada-descripcion{max-width:340px;font-size:13px;}
+.portada-inferior{font-size:8px;letter-spacing:1px;}
+.seccion{padding-top:80px;padding-bottom:80px;}
+.introduccion{grid-template-columns:1fr;gap:20px;}
+.introduccion h2,.cabecera-seccion h2,.video-texto h2{font-size:43px;}
+.introduccion-imagen{height:350px;min-height:0;}
+.cabecera-seccion{display:block;margin-bottom:35px;}
+.cabecera-descripcion{margin-top:20px;}
+.rejilla-experiencias{grid-template-columns:1fr;gap:45px;}
+.experiencia-desplazada,.experiencia-tercera,.experiencia-territorio{width:100%;margin-top:0;grid-column:1;}
+.experiencia-grande .experiencia-foto,.experiencia-desplazada .experiencia-foto,.experiencia-tercera .experiencia-foto,.experiencia-territorio .experiencia-foto{height:320px;}
+.experiencia-info{gap:16px;padding-top:24px;}
+.experiencia-info h3{font-size:24px;margin-bottom:12px;}
+.itinerario{min-height:530px;}
+.itinerario-contenido{padding-top:80px;padding-bottom:100px;}
+.itinerario h2{font-size:45px;}
+.itinerario-nota{left:var(--margen);right:var(--margen);justify-content:space-between;font-size:8px;gap:10px;}
+.galeria-cultural{padding:80px var(--margen);}
+.galeria-cultural-cabecera{margin-bottom:32px;}
+.galeria-cultural-cabecera h2{font-size:42px;}
+.relato-cultural{grid-template-columns:1fr;}
+.relato-imagen{min-height:300px;height:300px;}
+.relato-contenido{padding:28px 24px 32px;}
+.relato-contenido h3{font-size:34px;}
+.relato-controles{align-items:flex-start;}
+.relato-siguiente{font-size:10px;}
+.video-seccion{padding-top:80px;padding-bottom:70px;}
+.video-marco{aspect-ratio:4/3;}
+.video-credito p{font-size:19px;}
+.cierre{padding:90px 20px;}
+.cierre h2{font-size:43px;}
+.pie-pagina{flex-direction:column;align-items:flex-start;}
+}
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+
+/* ESTILO EXCLUSIVO PARA LA IMAGEN DE KUMIS */
+.introduccion-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    filter: saturate(.96) contrast(1.03);
+    transform: scale(1.001);
+    transition:
+        transform .9s cubic-bezier(.2, .7, .2, 1),
+        filter .7s ease;
+}
+
+.introduccion-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #d9d1c3;
+    box-shadow:
+        0 18px 38px rgb(40 42 36 / 10%),
+        0 3px 8px rgb(40 42 36 / 5%);
+    outline: 1px solid rgb(255 255 255 / 55%);
+    outline-offset: -1px;
+}
+
+.introduccion-imagen:hover img {
+    transform: scale(1.065);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .introduccion-imagen img {
+        transition: none;
+    }
+
+    .introduccion-imagen:hover img {
+        transform: none;
+    }
+}
+
+
+/* Ajustes de visualización */
+
+img,
+video {
+    max-width: 100%;
+}
+
+.portada,
+.introduccion,
+.experiencias,
+.itinerario,
+.galeria-cultural,
+.video-seccion,
+.cierre,
+.pie-pagina {
+    min-width: 0;
+}
+
+.introduccion-contenido,
+.experiencia-info,
+.galeria-cultural-cabecera,
+.relato-contenido,
+.video-texto {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 1400px) {
+    .portada-contenido {
+        width: min(850px, 85%);
+    }
+
+    .seccion,
+    .galeria-cultural,
+    .video-seccion {
+        padding-left: max(var(--margen), calc((100vw - 1400px) / 2));
+        padding-right: max(var(--margen), calc((100vw - 1400px) / 2));
+    }
+}
+
+@media (max-width: 1000px) {
+    .encabezado {
+        gap: 18px;
+    }
+
+    .navegacion {
+        column-gap: 18px;
+        row-gap: 12px;
+    }
+
+    .introduccion,
+    .rejilla-experiencias,
+    .relato-cultural {
+        min-width: 0;
+    }
+
+    .experiencia-info {
+        gap: 16px;
+    }
+
+    .relato-controles {
+        flex-wrap: wrap;
+    }
+
+    .pie-pagina {
+        row-gap: 18px;
+    }
+}
+
+@media (max-width: 650px) {
+    .encabezado {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .navegacion {
+        left: 0;
+        right: 0;
+        padding: 13px 16px;
+        column-gap: 14px;
+        row-gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navegacion a {
+        white-space: nowrap;
+    }
+
+    .portada-superior {
+        left: var(--margen);
+        right: var(--margen);
+        gap: 12px;
+    }
+
+    .portada-contenido {
+        max-width: 100%;
+    }
+
+    .portada h1 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .introduccion-imagen {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .experiencia-info {
+        align-items: flex-start;
+    }
+
+    .experiencia-info > div {
+        min-width: 0;
+    }
+
+    .experiencia-info p,
+    .texto-introduccion,
+    .cabecera-descripcion,
+    .video-texto > p:not(.sobretitulo) {
+        overflow-wrap: break-word;
+    }
+
+    .relato-imagen img {
+        width: 100%;
+    }
+
+    .relato-controles {
+        gap: 16px;
+    }
+
+    .relato-siguiente {
+        max-width: 100%;
+    }
+
+    .video-marco {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-marco video {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .pie-pagina > * {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        --margen: 16px;
+    }
+
+    .encabezado {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .marca {
+        gap: 7px;
+        font-size: 20px;
+    }
+
+    .marca-simbolo {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .navegacion {
+        padding-left: 12px;
+        padding-right: 12px;
+        column-gap: 11px;
+        row-gap: 10px;
+    }
+
+    .navegacion a {
+        font-size: 9px;
+    }
+
+    .portada h1 {
+        font-size: clamp(40px, 11vw, 48px);
+        letter-spacing: -1.3px;
+    }
+
+    .portada-descripcion {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .introduccion h2,
+    .cabecera-seccion h2,
+    .video-texto h2,
+    .cierre h2 {
+        font-size: clamp(32px, 9vw, 40px);
+        letter-spacing: -1px;
+    }
+
+    .experiencia-grande .experiencia-foto,
+    .experiencia-desplazada .experiencia-foto,
+    .experiencia-tercera .experiencia-foto,
+    .experiencia-territorio .experiencia-foto {
+        height: 260px;
+    }
+
+    .experiencia-info h3 {
+        font-size: 22px;
+    }
+
+    .galeria-cultural-cabecera h2 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .relato-contenido {
+        padding: 24px 18px 28px;
+    }
+
+    .relato-contenido h3 {
+        font-size: 29px;
+    }
+
+    .relato-controles {
+        align-items: flex-start;
+    }
+
+    .itinerario h2 {
+        font-size: 37px;
+        letter-spacing: -1px;
+    }
+
+    .cierre {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .portada h1 {
+        font-size: 38px;
+    }
+
+    .navegacion {
+        column-gap: 9px;
+    }
+
+    .experiencia-info {
+        gap: 10px;
+    }
+
+    .relato-siguiente {
+        font-size: 9px;
+    }
+}
+

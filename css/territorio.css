@@ -1,0 +1,2085 @@
+/* RUMBO — PÁGINA TERRITORIO */
+
+.territorio-pagina {
+    --territorio-verde: #405c46;
+    --territorio-verde-oscuro: #293f34;
+    --territorio-crema: #f8f5ed;
+    --territorio-arena: #e9e2d3;
+    --territorio-terracota: #b45b3c;
+    --territorio-amarillo: #e7ad35;
+    --territorio-texto: #393932;
+    --territorio-secundario: #716f65;
+
+    margin: 0;
+    background: var(--territorio-crema);
+    color: var(--territorio-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.territorio-pagina *,
+.territorio-pagina *::before,
+.territorio-pagina *::after {
+    box-sizing: border-box;
+}
+
+.territorio-pagina img {
+    display: block;
+    width: 100%;
+}
+
+.territorio-pagina a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.territorio-pagina figure {
+    margin: 0;
+}
+
+.territorio-pagina h1,
+.territorio-pagina h2,
+.territorio-pagina h3,
+.territorio-pagina p {
+    margin-top: 0;
+}
+
+.territorio-pagina h1,
+.territorio-pagina h2,
+.territorio-pagina h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.045em;
+}
+
+.territorio-pagina section[id] {
+    scroll-margin-top: 95px;
+}
+
+.territorio-etiqueta {
+    display: block;
+    margin-bottom: 24px;
+    color: var(--territorio-terracota);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    line-height: 1.8;
+}
+
+/* ENCABEZADO */
+
+.territorio-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 30px;
+    min-height: 76px;
+    padding: 14px 6.5%;
+    background: rgba(49, 76, 62, 0.96);
+    color: #fffdf7;
+    box-shadow: 0 5px 22px rgba(29, 46, 35, 0.09);
+    backdrop-filter: blur(12px);
+}
+
+.territorio-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -1.3px;
+    white-space: nowrap;
+}
+
+.territorio-logo-simbolo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.territorio-punto {
+    color: #e6a17e;
+}
+
+.territorio-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.territorio-nav a,
+.territorio-nav-paginas a {
+    position: relative;
+    padding: 8px 0;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0.93;
+    transition: opacity 0.25s ease;
+}
+
+.territorio-nav a::after,
+.territorio-nav-paginas a::after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    height: 1px;
+    background: #e6a17e;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.territorio-nav a:hover,
+.territorio-nav-paginas a:hover {
+    opacity: 1;
+}
+
+.territorio-nav a:hover::after,
+.territorio-nav-paginas a:hover::after {
+    transform: scaleX(1);
+}
+
+.territorio-nav-paginas {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.territorio-nav-paginas a {
+    font-size: 10px;
+}
+
+/* PORTADA */
+
+.territorio-portada {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+    gap: 7%;
+    min-height: 650px;
+    padding: 80px 7% 75px;
+    overflow: hidden;
+    background: var(--territorio-crema);
+}
+
+.territorio-portada-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+}
+
+.territorio-portada h1 {
+    margin-bottom: 30px;
+    font-size: clamp(55px, 6.1vw, 88px);
+    line-height: 0.99;
+}
+
+.territorio-portada h1 em,
+.territorio-titulo-seccion h2 em,
+.territorio-atractivos-cabecera h2 em {
+    color: var(--territorio-terracota);
+    font-weight: 400;
+}
+
+.territorio-portada-contenido > p {
+    max-width: 470px;
+    margin-bottom: 30px;
+    color: #66655c;
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.territorio-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 19px;
+    border: 1px solid #c9c5b8;
+    color: var(--territorio-verde);
+    font-size: 12px;
+    transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.territorio-boton:hover {
+    border-color: var(--territorio-verde);
+    background: var(--territorio-verde);
+    color: white;
+}
+
+.territorio-boton span {
+    font-size: 18px;
+}
+
+.territorio-portada-imagen {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 650px;
+    justify-self: end;
+}
+
+.territorio-portada-imagen img {
+    height: clamp(390px, 43vw, 540px);
+    object-fit: cover;
+    object-position: center 32%;
+}
+
+.territorio-portada-imagen figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 15px;
+    color: var(--territorio-secundario);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+}
+
+.territorio-portada-numero {
+    position: absolute;
+    right: 34%;
+    bottom: -125px;
+    color: rgba(64, 92, 70, 0.045);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 390px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* INTRODUCCIÓN */
+
+.territorio-introduccion {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    gap: 12%;
+    align-items: start;
+    padding: 100px 12%;
+    background: #ede7da;
+}
+
+.territorio-introduccion h2 {
+    max-width: 620px;
+    margin-bottom: 0;
+    font-size: clamp(35px, 4.2vw, 56px);
+    line-height: 1.12;
+}
+
+.territorio-introduccion-texto {
+    padding-top: 25px;
+}
+
+.territorio-introduccion-texto p {
+    margin-bottom: 20px;
+    color: #66655c;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.territorio-introduccion-texto p:last-child {
+    margin-bottom: 0;
+}
+
+/* MAPAS */
+
+.territorio-mapas {
+    padding: 115px 7% 120px;
+    background: var(--territorio-crema);
+}
+
+.territorio-titulo-seccion {
+    display: grid;
+    grid-template-columns: 1fr 0.65fr;
+    align-items: end;
+    gap: 50px;
+    margin-bottom: 55px;
+}
+
+.territorio-titulo-seccion .territorio-etiqueta {
+    grid-column: 1 / -1;
+    margin-bottom: -25px;
+}
+
+.territorio-titulo-seccion h2 {
+    margin-bottom: 0;
+    font-size: clamp(45px, 5.3vw, 70px);
+    line-height: 1.04;
+}
+
+.territorio-titulo-seccion > p {
+    max-width: 440px;
+    margin-bottom: 5px;
+    color: var(--territorio-secundario);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.territorio-mapas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.territorio-mapa-card {
+    min-width: 0;
+    padding: 26px;
+    background: #eee8db;
+}
+
+.territorio-mapa-atractivos {
+    margin-top: 65px;
+    background: #e5e8da;
+}
+
+.territorio-mapa-encabezado {
+    padding-bottom: 22px;
+}
+
+.territorio-mapa-numero {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--territorio-terracota);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.territorio-mapa-encabezado h3 {
+    margin-bottom: 10px;
+    font-size: clamp(25px, 2.5vw, 34px);
+    line-height: 1.15;
+}
+
+.territorio-mapa-encabezado p {
+    max-width: 470px;
+    margin-bottom: 0;
+    color: #68675d;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.territorio-mapa-imagen {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #dce4d2;
+}
+
+.territorio-mapa-imagen img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.22 / 1;
+    object-fit: contain;
+    transition: transform 0.55s ease;
+}
+
+.territorio-mapa-imagen:hover img {
+    transform: scale(1.025);
+}
+
+.territorio-mapa-imagen > span {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 13px;
+    background: rgba(41, 63, 52, 0.92);
+    color: white;
+    font-size: 10px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.territorio-mapa-imagen:hover > span,
+.territorio-mapa-imagen:focus-visible > span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.territorio-mapa-nota {
+    margin: 16px 0 0;
+    color: #6d6b61;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* ATRACTIVOS */
+
+.territorio-atractivos {
+    padding: 110px 12% 100px;
+    background: var(--territorio-verde);
+    color: #fffdf7;
+}
+
+.territorio-atractivos .territorio-etiqueta {
+    color: #e8b18c;
+}
+
+.territorio-atractivos-cabecera {
+    display: grid;
+    grid-template-columns: 1fr 0.68fr;
+    gap: 12%;
+    align-items: end;
+    margin-bottom: 55px;
+}
+
+.territorio-atractivos-cabecera h2 {
+    margin-bottom: 0;
+    font-size: clamp(45px, 5.2vw, 68px);
+    line-height: 1.03;
+}
+
+.territorio-atractivos-cabecera h2 em {
+    color: #e8b18c;
+}
+
+.territorio-atractivos-cabecera > p {
+    margin-bottom: 5px;
+    color: rgba(255, 253, 247, 0.8);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.territorio-lista-atractivos {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.territorio-atractivo {
+    display: grid;
+    grid-template-columns: 65px minmax(0, 1fr) 30px;
+    align-items: start;
+    gap: 25px;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    transition: padding 0.25s ease;
+}
+
+.territorio-atractivo:hover {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.territorio-atractivo-indice {
+    padding-top: 7px;
+    color: #e8b18c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+.territorio-atractivo h3 {
+    margin-bottom: 10px;
+    color: #fffdf7;
+    font-size: 29px;
+}
+
+.territorio-atractivo p {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: rgba(255, 253, 247, 0.78);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.territorio-atractivo-icono {
+    padding-top: 5px;
+    color: #e8b18c;
+    font-size: 22px;
+    transition: transform 0.25s ease;
+}
+
+.territorio-atractivo:hover .territorio-atractivo-icono {
+    transform: translate(3px, -3px);
+}
+
+.territorio-aviso {
+    margin: 30px 0 0;
+    color: rgba(255, 253, 247, 0.7);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* IDENTIDAD CULTURAL */
+
+.territorio-identidad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9%;
+    align-items: center;
+    padding: 110px 10%;
+    background: #ede7da;
+}
+
+.territorio-identidad-imagen {
+    position: relative;
+    min-width: 0;
+}
+
+.territorio-identidad-imagen img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+}
+
+.territorio-identidad-imagen > span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px 18px;
+    background: var(--territorio-verde);
+    color: #fffdf7;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+.territorio-identidad-texto h2 {
+    margin-bottom: 25px;
+    font-size: clamp(38px, 4.3vw, 58px);
+    line-height: 1.08;
+}
+
+.territorio-identidad-texto > p {
+    margin-bottom: 20px;
+    color: var(--territorio-secundario);
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.territorio-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--territorio-terracota);
+    color: var(--territorio-verde);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.territorio-enlace span {
+    transition: transform 0.25s ease;
+}
+
+.territorio-enlace:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* ITINERARIO */
+
+.territorio-itinerario {
+    padding: 110px 12%;
+    background: var(--territorio-crema);
+}
+
+.territorio-itinerario-intro {
+    max-width: 760px;
+    margin-bottom: 55px;
+}
+
+.territorio-itinerario-intro h2 {
+    margin-bottom: 22px;
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.05;
+}
+
+.territorio-itinerario-intro > p {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: var(--territorio-secundario);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.territorio-itinerario-linea {
+    position: relative;
+    margin-left: 10px;
+    padding-left: 35px;
+    border-left: 1px solid #c9c5b8;
+}
+
+.territorio-itinerario-paso {
+    position: relative;
+    display: grid;
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 25px;
+    padding: 0 0 38px;
+}
+
+.territorio-itinerario-paso::before {
+    position: absolute;
+    top: 5px;
+    left: -41px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--territorio-terracota);
+    border-radius: 50%;
+    background: var(--territorio-crema);
+    content: "";
+}
+
+.territorio-hora {
+    color: var(--territorio-terracota);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.territorio-itinerario-paso h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.territorio-itinerario-paso p {
+    max-width: 620px;
+    margin-bottom: 0;
+    color: var(--territorio-secundario);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.territorio-itinerario-nota {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 15px;
+    align-items: start;
+    margin-top: 20px;
+    padding: 23px;
+    background: #ede7da;
+}
+
+.territorio-itinerario-nota > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--territorio-terracota);
+    border-radius: 50%;
+    color: var(--territorio-terracota);
+}
+
+.territorio-itinerario-nota p {
+    margin-bottom: 0;
+    color: var(--territorio-secundario);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.territorio-itinerario-nota strong {
+    color: var(--territorio-texto);
+}
+
+/* PLANIFICA TU VISITA */
+
+.territorio-planifica {
+    padding: 110px 9%;
+    background: #ede7da;
+}
+
+.territorio-planifica-intro {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 25px 10%;
+    align-items: end;
+    margin-bottom: 55px;
+}
+
+.territorio-planifica-intro .territorio-etiqueta {
+    grid-column: 1 / -1;
+    margin-bottom: -10px;
+}
+
+.territorio-planifica-intro h2 {
+    max-width: 650px;
+    margin-bottom: 0;
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: 1.06;
+}
+
+.territorio-planifica-intro h2 em {
+    color: var(--territorio-terracota);
+    font-weight: 400;
+}
+
+.territorio-planifica-intro > p {
+    margin-bottom: 5px;
+    color: var(--territorio-secundario);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.territorio-planifica-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.territorio-planifica-card {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 20px;
+    padding: 28px;
+    border: 1px solid rgba(64, 92, 70, 0.18);
+    background: rgba(248, 245, 237, 0.78);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.territorio-planifica-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(64, 92, 70, 0.45);
+    box-shadow: 0 14px 30px rgba(41, 63, 52, 0.08);
+}
+
+.territorio-planifica-numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--territorio-verde);
+    color: #fffdf7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+}
+
+.territorio-planifica-card h3 {
+    margin-bottom: 12px;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.territorio-planifica-card p {
+    margin-bottom: 0;
+    color: var(--territorio-secundario);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.territorio-planifica-aviso {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 15px;
+    align-items: start;
+    margin-top: 28px;
+    padding: 23px 25px;
+    border-left: 3px solid var(--territorio-terracota);
+    background: rgba(248, 245, 237, 0.75);
+}
+
+.territorio-planifica-aviso > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border: 1px solid var(--territorio-terracota);
+    border-radius: 50%;
+    color: var(--territorio-terracota);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.territorio-planifica-aviso p {
+    margin-bottom: 0;
+    color: var(--territorio-secundario);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.territorio-planifica-aviso strong {
+    color: var(--territorio-texto);
+}
+
+/* TURISMO RESPONSABLE */
+
+.territorio-responsable {
+    padding: 115px 9% 105px;
+    background: var(--territorio-verde-oscuro);
+    color: #fffdf7;
+}
+
+.territorio-responsable .territorio-etiqueta {
+    color: #e8b18c;
+}
+
+.territorio-responsable-intro {
+    display: grid;
+    grid-template-columns: 1fr 0.72fr;
+    gap: 25px 10%;
+    align-items: end;
+    margin-bottom: 60px;
+}
+
+.territorio-responsable-intro .territorio-etiqueta {
+    grid-column: 1 / -1;
+    margin-bottom: -10px;
+}
+
+.territorio-responsable-intro h2 {
+    margin-bottom: 0;
+    font-size: clamp(46px, 5.5vw, 72px);
+    line-height: 1.03;
+}
+
+.territorio-responsable-intro h2 em {
+    color: #e8b18c;
+    font-weight: 400;
+}
+
+.territorio-responsable-intro > p {
+    margin-bottom: 5px;
+    color: rgba(255, 253, 247, 0.78);
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.territorio-responsable-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(255, 253, 247, 0.2);
+    border: 1px solid rgba(255, 253, 247, 0.2);
+}
+
+.territorio-responsable-card {
+    min-height: 230px;
+    padding: 32px;
+    background: var(--territorio-verde-oscuro);
+    transition: background 0.3s ease;
+}
+
+.territorio-responsable-card:hover {
+    background: #344d3d;
+}
+
+.territorio-responsable-icono {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #e8b18c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+}
+
+.territorio-responsable-card h3 {
+    margin-bottom: 14px;
+    color: #fffdf7;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.territorio-responsable-card p {
+    max-width: 480px;
+    margin-bottom: 0;
+    color: rgba(255, 253, 247, 0.76);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.territorio-responsable-cierre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 253, 247, 0.25);
+}
+
+.territorio-responsable-cierre > p {
+    max-width: 570px;
+    margin-bottom: 0;
+    color: #fffdf7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 2.2vw, 27px);
+    line-height: 1.5;
+}
+
+.territorio-responsable .territorio-enlace {
+    flex-shrink: 0;
+    color: #e8b18c;
+}
+
+/* CIERRE ORIGINAL */
+
+.territorio-cierre {
+    padding: 100px 10%;
+    background: #293f34;
+    color: #fffdf7;
+    text-align: center;
+}
+
+.territorio-cierre h2 {
+    max-width: 780px;
+    margin: 0 auto 22px;
+    color: #fffdf7;
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.08;
+}
+
+.territorio-cierre > p {
+    max-width: 620px;
+    margin: 0 auto 35px;
+    color: rgba(255, 253, 247, 0.82);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.territorio-cierre-enlaces {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 28px;
+}
+
+.territorio-cierre-enlaces a {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e6a17e;
+    color: #fffdf7;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.25s ease;
+}
+
+.territorio-cierre-enlaces a:hover {
+    color: #e6a17e;
+}
+
+/* PIE DE PÁGINA */
+
+.territorio-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 7%;
+    background: var(--territorio-verde-oscuro);
+    color: #fffdf7;
+}
+
+.territorio-footer p {
+    margin-bottom: 0;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.territorio-footer > a:last-child {
+    font-size: 11px;
+}
+
+/* RESPONSIVE ORIGINAL */
+
+@media (max-width: 1100px) {
+    .territorio-header {
+        grid-template-columns: auto 1fr;
+        gap: 15px 25px;
+    }
+
+    .territorio-nav {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .territorio-nav-paginas {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 900px) {
+    .territorio-portada {
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+        min-height: auto;
+        padding: 70px 6%;
+    }
+
+    .territorio-portada h1 {
+        font-size: clamp(44px, 6vw, 64px);
+    }
+
+    .territorio-introduccion,
+    .territorio-identidad {
+        gap: 7%;
+        padding: 75px 7%;
+    }
+
+    .territorio-mapas {
+        padding: 85px 6%;
+    }
+
+    .territorio-atractivos,
+    .territorio-itinerario {
+        padding: 85px 8%;
+    }
+
+    .territorio-planifica,
+    .territorio-responsable {
+        padding: 85px 6%;
+    }
+
+    .territorio-planifica-intro,
+    .territorio-responsable-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .territorio-planifica-intro .territorio-etiqueta,
+    .territorio-responsable-intro .territorio-etiqueta {
+        margin-bottom: 0;
+    }
+
+    .territorio-planifica-grid,
+    .territorio-responsable-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .territorio-responsable-cierre {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .territorio-header {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px 6%;
+    }
+
+    .territorio-nav {
+        justify-content: flex-start;
+        gap: 8px 16px;
+    }
+
+    .territorio-nav a {
+        font-size: 10px;
+    }
+
+    .territorio-nav-paginas {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .territorio-portada {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 6%;
+    }
+
+    .territorio-portada h1 {
+        font-size: clamp(48px, 12vw, 66px);
+    }
+
+    .territorio-portada-imagen {
+        max-width: none;
+    }
+
+    .territorio-portada-imagen img {
+        height: 390px;
+    }
+
+    .territorio-portada-numero {
+        display: none;
+    }
+
+    .territorio-introduccion,
+    .territorio-identidad {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 65px 7%;
+    }
+
+    .territorio-introduccion-texto {
+        padding-top: 0;
+    }
+
+    .territorio-mapas {
+        padding: 65px 6%;
+    }
+
+    .territorio-titulo-seccion,
+    .territorio-atractivos-cabecera {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .territorio-titulo-seccion .territorio-etiqueta {
+        margin-bottom: 0;
+    }
+
+    .territorio-mapas-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .territorio-mapa-atractivos {
+        margin-top: 0;
+    }
+
+    .territorio-mapa-card {
+        padding: 18px;
+    }
+
+    .territorio-atractivos,
+    .territorio-itinerario {
+        padding: 65px 7%;
+    }
+
+    .territorio-atractivo {
+        grid-template-columns: 35px minmax(0, 1fr) 20px;
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    .territorio-atractivo h3 {
+        font-size: 24px;
+    }
+
+    .territorio-identidad-imagen img {
+        height: 400px;
+    }
+
+    .territorio-itinerario-paso {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-bottom: 30px;
+    }
+
+    .territorio-planifica,
+    .territorio-responsable {
+        padding: 65px 6%;
+    }
+
+    .territorio-planifica-grid,
+    .territorio-responsable-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .territorio-planifica-card {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 14px;
+        padding: 22px 18px;
+    }
+
+    .territorio-planifica-numero {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .territorio-planifica-card h3,
+    .territorio-responsable-card h3 {
+        font-size: 23px;
+    }
+
+    .territorio-planifica-aviso {
+        padding: 18px;
+    }
+
+    .territorio-responsable-card {
+        min-height: auto;
+        padding: 25px 22px;
+    }
+
+    .territorio-responsable-cierre {
+        gap: 20px;
+    }
+
+    .territorio-cierre {
+        padding: 65px 7%;
+    }
+
+    .territorio-cierre-enlaces {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .territorio-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 25px 7%;
+    }
+}
+
+/* MENÚ DESCUBRIR */
+
+.territorio-descubrir {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.territorio-descubrir-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: #fffdf7;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.territorio-descubrir-boton:hover,
+.territorio-descubrir-boton:focus-visible {
+    color: #e6a17e;
+}
+
+.territorio-descubrir-flecha {
+    display: inline-block;
+    font-size: 15px;
+    transition: transform 0.25s ease;
+}
+
+.territorio-descubrir-boton.activo .territorio-descubrir-flecha {
+    transform: rotate(180deg);
+}
+
+.territorio-descubrir-menu {
+    position: absolute;
+    z-index: 1200;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 270px;
+    padding: 8px 0;
+    border: 1px solid rgb(40 42 36 / 8%);
+    background: #f3efe6;
+    color: #282a24;
+    box-shadow: 0 16px 38px rgb(20 29 23 / 18%);
+    animation: territorio-menu-entrada 0.2s ease both;
+}
+
+.territorio-descubrir-menu[hidden] {
+    display: none;
+}
+
+.territorio-descubrir-menu a {
+    display: block;
+    padding: 13px 19px;
+    border-bottom: 1px solid rgb(40 42 36 / 10%);
+    font-size: 12px;
+    transition: background 0.25s ease, padding-left 0.25s ease;
+}
+
+.territorio-descubrir-menu a:last-child {
+    border-bottom: 0;
+}
+
+.territorio-descubrir-menu a:hover {
+    padding-left: 25px;
+    background: #e8e2d6;
+}
+
+@keyframes territorio-menu-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ESTILO FOTOGRÁFICO COMO EN INDEX */
+
+.territorio-portada-imagen,
+.territorio-identidad-imagen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 8px;
+    background: #d9d1c3;
+    box-shadow:
+        0 18px 38px rgb(40 42 36 / 10%),
+        0 3px 8px rgb(40 42 36 / 5%);
+    outline: 1px solid rgb(255 255 255 / 55%);
+    outline-offset: -1px;
+    transform: translateZ(0);
+}
+
+.territorio-portada-imagen img,
+.territorio-identidad-imagen img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    filter: saturate(0.96) contrast(1.03);
+    transform: scale(1.001);
+    transition:
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.7s ease;
+}
+
+.territorio-portada-imagen img {
+    height: clamp(390px, 43vw, 540px);
+    object-position: center 32%;
+}
+
+.territorio-identidad-imagen img {
+    height: 530px;
+    object-position: center;
+}
+
+.territorio-portada-imagen::before,
+.territorio-identidad-imagen::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            180deg,
+            rgb(20 29 23 / 0%) 52%,
+            rgb(20 29 23 / 58%) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgb(20 29 23 / 7%),
+            transparent 40%
+        );
+    opacity: 0.9;
+    transition: opacity 0.45s ease;
+}
+
+.territorio-portada-imagen::after,
+.territorio-identidad-imagen::after {
+    content: "↗";
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: 50%;
+    background: rgb(243 239 230 / 92%);
+    color: var(--territorio-verde-oscuro);
+    font-size: 19px;
+    opacity: 0;
+    transform: translateY(7px) rotate(-12deg);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+    pointer-events: none;
+}
+
+.territorio-portada-imagen:hover img,
+.territorio-identidad-imagen:hover img {
+    transform: scale(1.065);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+.territorio-portada-imagen:hover::before,
+.territorio-identidad-imagen:hover::before {
+    opacity: 1;
+}
+
+.territorio-portada-imagen:hover::after,
+.territorio-identidad-imagen:hover::after {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    background: var(--territorio-terracota);
+    color: white;
+}
+
+.territorio-portada-imagen figcaption {
+    position: relative;
+    z-index: 2;
+}
+
+/* MAPAS: MARCO Y SOMBRA SIN DEFORMARLOS */
+
+.territorio-mapa-imagen {
+    border-radius: 8px;
+    box-shadow:
+        0 18px 38px rgb(40 42 36 / 10%),
+        0 3px 8px rgb(40 42 36 / 5%);
+    outline: 1px solid rgb(255 255 255 / 55%);
+    outline-offset: -1px;
+}
+
+.territorio-mapa-imagen img {
+    object-fit: contain;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.territorio-mapa-imagen:hover img {
+    transform: scale(1.035);
+}
+
+/* INVITACIÓN EXCLUSIVA DE TERRITORIO A LOS LUGARES TURÍSTICOS */
+
+.territorio-explorar-lugares {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    min-height: 390px;
+    padding: 80px 10%;
+    overflow: hidden;
+    background: #e8e2d6;
+    color: var(--territorio-texto);
+}
+
+.territorio-explorar-contenido {
+    position: relative;
+    z-index: 2;
+    width: min(650px, 100%);
+}
+
+.territorio-explorar-contenido h2 {
+    max-width: 650px;
+    margin-bottom: 23px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5.3vw, 70px);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+}
+
+.territorio-explorar-contenido h2 em {
+    color: var(--territorio-terracota);
+    font-weight: 400;
+}
+
+.territorio-explorar-contenido p {
+    max-width: 540px;
+    margin-bottom: 28px;
+    color: var(--territorio-secundario);
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.territorio-explorar-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 17px 20px;
+    background: var(--territorio-verde-oscuro);
+    color: #fffdf7 !important;
+    font-size: 12px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.territorio-explorar-boton span {
+    font-size: 19px;
+    transition: transform 0.3s ease;
+}
+
+.territorio-explorar-boton:hover {
+    transform: translateY(-4px);
+    background: var(--territorio-terracota);
+}
+
+.territorio-explorar-boton:hover span {
+    transform: translate(3px, -3px);
+}
+
+.territorio-explorar-decoracion {
+    position: absolute;
+    right: 7%;
+    bottom: -45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: rgb(64 92 70 / 7%);
+    pointer-events: none;
+}
+
+.territorio-explorar-decoracion span:first-child {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(160px, 25vw, 350px);
+    line-height: 0.9;
+}
+
+.territorio-explorar-decoracion span:last-child {
+    color: var(--territorio-terracota);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+/* AJUSTES RESPONSIVE PARA LOS NUEVOS ELEMENTOS */
+
+@media (max-width: 1100px) {
+    .territorio-nav-paginas {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .territorio-descubrir-menu {
+        right: 0;
+    }
+
+    .territorio-explorar-lugares {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+}
+
+@media (max-width: 600px) {
+    .territorio-nav-paginas {
+        justify-content: flex-start;
+        gap: 10px 15px;
+        width: 100%;
+    }
+
+    .territorio-descubrir-menu {
+        right: auto;
+        left: 0;
+        width: min(270px, 85vw);
+    }
+
+    .territorio-portada-imagen img {
+        height: 390px;
+    }
+
+    .territorio-identidad-imagen img {
+        height: 350px;
+    }
+
+    .territorio-explorar-lugares {
+        min-height: auto;
+        padding: 65px 7%;
+    }
+
+    .territorio-explorar-contenido h2 {
+        font-size: 44px;
+    }
+
+    .territorio-explorar-contenido p {
+        font-size: 13px;
+    }
+
+    .territorio-explorar-decoracion {
+        right: -10px;
+        bottom: -20px;
+    }
+
+    .territorio-explorar-decoracion span:first-child {
+        font-size: 180px;
+    }
+}
+
+/* ACCESIBILIDAD: RESPETAR PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    .territorio-planifica-card,
+    .territorio-responsable-card,
+    .territorio-mapa-imagen img,
+    .territorio-portada-imagen img,
+    .territorio-identidad-imagen img,
+    .territorio-descubrir-menu,
+    .territorio-explorar-boton,
+    .territorio-explorar-boton span {
+        transition: none;
+        animation: none;
+    }
+
+    .territorio-planifica-card:hover,
+    .territorio-mapa-imagen:hover img,
+    .territorio-portada-imagen:hover img,
+    .territorio-identidad-imagen:hover img {
+        transform: none;
+    }
+}
+
+/* =========================================
+   RUMBO — AJUSTES FINALES DE TERRITORIO
+   Encabezado alineado y fotografías
+   ========================================= */
+
+/* ENCABEZADO */
+.territorio-header {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 24px;
+}
+
+.territorio-nav {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px 18px;
+}
+
+.territorio-nav-paginas {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px 18px;
+    width: 100%;
+}
+
+/* FOTOGRAFÍAS: MISMO ESTILO VISUAL DE INICIO */
+.territorio-portada-imagen,
+.territorio-identidad-imagen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 8px;
+    background: #d9d1c3;
+    box-shadow:
+        0 18px 38px rgb(40 42 36 / 10%),
+        0 3px 8px rgb(40 42 36 / 5%);
+    outline: 1px solid rgb(255 255 255 / 55%);
+    outline-offset: -1px;
+    transform: translateZ(0);
+}
+
+.territorio-portada-imagen img,
+.territorio-identidad-imagen img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    filter: saturate(.96) contrast(1.03);
+    transform: scale(1.001);
+    transition:
+        transform .9s cubic-bezier(.2, .7, .2, 1),
+        filter .7s ease;
+}
+
+.territorio-portada-imagen img {
+    height: clamp(390px, 43vw, 540px);
+    object-position: center 32%;
+}
+
+.territorio-identidad-imagen img {
+    height: 530px;
+    object-position: center;
+}
+
+/* Sombra degradada sobre las fotografías */
+.territorio-portada-imagen::before,
+.territorio-identidad-imagen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            180deg,
+            rgb(20 29 23 / 0%) 52%,
+            rgb(20 29 23 / 58%) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgb(20 29 23 / 7%),
+            transparent 40%
+        );
+    opacity: .9;
+    transition: opacity .45s ease;
+}
+
+/* Indicador de interacción */
+.territorio-portada-imagen::after,
+.territorio-identidad-imagen::after {
+    content: "↗";
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: 50%;
+    background: rgb(243 239 230 / 92%);
+    color: var(--territorio-verde-oscuro);
+    font-size: 19px;
+    opacity: 0;
+    transform: translateY(7px) rotate(-12deg);
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+/* Textos que van sobre las fotografías */
+.territorio-portada-imagen figcaption,
+.territorio-identidad-imagen > span {
+    position: relative;
+    z-index: 2;
+}
+
+.territorio-identidad-imagen > span {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    color: #fffdf7;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+/* Animación al pasar el cursor */
+.territorio-portada-imagen:hover img,
+.territorio-identidad-imagen:hover img {
+    transform: scale(1.065);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+.territorio-portada-imagen:hover::before,
+.territorio-identidad-imagen:hover::before {
+    opacity: 1;
+}
+
+.territorio-portada-imagen:hover::after,
+.territorio-identidad-imagen:hover::after {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    background: var(--territorio-terracota);
+    color: white;
+}
+
+/* MAPAS: marco elegante sin deformar su contenido */
+.territorio-mapa-imagen {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 38px rgb(40 42 36 / 10%),
+        0 3px 8px rgb(40 42 36 / 5%);
+    outline: 1px solid rgb(255 255 255 / 55%);
+    outline-offset: -1px;
+}
+
+.territorio-mapa-imagen img {
+    object-fit: contain;
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.territorio-mapa-imagen:hover img {
+    transform: scale(1.035);
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+    .territorio-header {
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 14px 20px;
+    }
+
+    .territorio-nav {
+        justify-content: flex-end;
+        gap: 8px 12px;
+    }
+
+    .territorio-nav-paginas {
+        justify-content: flex-end;
+        gap: 10px 15px;
+    }
+}
+
+/* MÓVILES */
+@media (max-width: 760px) {
+    .territorio-header {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        gap: 10px;
+        padding: 14px 6%;
+    }
+
+    .territorio-nav,
+    .territorio-nav-paginas {
+        grid-column: 1;
+        grid-row: auto;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .territorio-nav {
+        gap: 8px 15px;
+    }
+
+    .territorio-nav-paginas {
+        gap: 8px 15px;
+    }
+
+    .territorio-portada-imagen img {
+        height: 390px;
+    }
+
+    .territorio-identidad-imagen img {
+        height: 350px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .territorio-portada-imagen img,
+    .territorio-identidad-imagen img,
+    .territorio-mapa-imagen img,
+    .territorio-portada-imagen::before,
+    .territorio-portada-imagen::after,
+    .territorio-identidad-imagen::before,
+    .territorio-identidad-imagen::after {
+        transition: none;
+        animation: none;
+    }
+
+    .territorio-portada-imagen:hover img,
+    .territorio-identidad-imagen:hover img,
+    .territorio-mapa-imagen:hover img {
+        transform: none;
+    }
+}
+
+/* ENCABEZADO: INICIO PRIMERO Y RESTO DEL MENÚ A LA DERECHA */
+.territorio-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.territorio-logo {
+    flex-shrink: 0;
+}
+
+.territorio-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-left: auto;
+}
+
+.territorio-nav > a {
+    white-space: nowrap;
+}
+
+.territorio-nav-paginas {
+    display: none;
+}
+
+/* DESCUBRIR */
+.territorio-descubrir {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.territorio-descubrir-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.territorio-descubrir-flecha {
+    transition: transform .25s ease;
+}
+
+.territorio-descubrir-boton.activo .territorio-descubrir-flecha {
+    transform: rotate(180deg);
+}
+
+.territorio-descubrir-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 1100;
+    width: 240px;
+    padding: 10px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 8px;
+    background: var(--territorio-verde-oscuro);
+    box-shadow: 0 15px 35px rgb(0 0 0 / 18%);
+}
+
+.territorio-descubrir-menu[hidden] {
+    display: none;
+}
+
+.territorio-descubrir-menu a {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: normal;
+}
+
+.territorio-descubrir-menu a:hover {
+    background: rgb(255 255 255 / 10%);
+}
+
+/* TABLET Y MÓVIL */
+@media (max-width: 1100px) {
+    .territorio-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px 24px;
+    }
+
+    .territorio-nav {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .territorio-header {
+        padding: 14px 6%;
+    }
+
+    .territorio-nav {
+        gap: 8px 14px;
+    }
+
+    .territorio-descubrir-menu {
+        right: auto;
+        left: 0;
+        width: min(260px, 85vw);
+    }
+}
+
+/* MENÚ DESCUBRIR: MISMO DISEÑO QUE INDEX.HTML */
+
+.territorio-descubrir-menu {
+    position: absolute;
+    z-index: 1200;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 215px;
+    padding: 8px 0;
+    border: 1px solid rgb(40 42 36 / 8%);
+    border-radius: 0;
+    background: #f3efe6;
+    color: #282a24;
+    box-shadow: 0 16px 38px rgb(20 29 23 / 18%);
+    animation: territorio-menu-entrada .2s ease both;
+}
+
+.territorio-descubrir-menu[hidden] {
+    display: none;
+}
+
+.territorio-descubrir-menu a {
+    display: block;
+    padding: 13px 19px;
+    border-bottom: 1px solid rgb(40 42 36 / 10%);
+    color: #282a24;
+    text-decoration: none;
+    transition: background .25s ease, padding-left .25s ease;
+}
+
+.territorio-descubrir-menu a:last-child {
+    border-bottom: 0;
+}
+
+.territorio-descubrir-menu a span {
+    display: block;
+    color: #393932;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.territorio-descubrir-menu a small {
+    display: block;
+    margin-top: 5px;
+    color: #858176;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.territorio-descubrir-menu a:hover {
+    padding-left: 25px;
+    background: #e8e2d6;
+}
+
+@keyframes territorio-menu-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .territorio-descubrir-menu {
+        right: 0;
+        left: auto;
+        width: min(260px, 85vw);
+    }
+}
+
+/* Botón superior para conocer los lugares turísticos */
+.territorio-nav-lugares {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background: #304c3e;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.territorio-nav-lugares:hover {
+    background: #304c3e;
+    transform: translateY(-2px);
+}
+
+/* Centrar la sección de invitación en la pantalla al pulsar */
+#conocer-lugares {
+    scroll-margin-top: 0;
+    min-height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

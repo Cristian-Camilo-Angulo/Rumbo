@@ -1,0 +1,379 @@
+.sabores-pagina{--sabores-verde:#405c46;--sabores-verde-oscuro:#293f34;--sabores-verde-profundo:#20382e;--sabores-crema:#f8f5ed;--sabores-arena:#ede7da;--sabores-terracota:#b45b3c;--sabores-acento:#e6a17e;--sabores-texto:#393932;--sabores-secundario:#716f65;margin:0;background:var(--sabores-crema);color:var(--sabores-texto);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.sabores-pagina *,.sabores-pagina *::before,.sabores-pagina *::after{box-sizing:border-box}
+.sabores-pagina img{display:block;width:100%;height:auto}
+.sabores-pagina a{color:inherit;text-decoration:none}
+.sabores-pagina figure{margin:0}
+.sabores-pagina h1,.sabores-pagina h2,.sabores-pagina h3,.sabores-pagina h4,.sabores-pagina p{margin-top:0}
+.sabores-pagina h1,.sabores-pagina h2,.sabores-pagina h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-0.045em}
+.sabores-pagina section[id]{scroll-margin-top:100px}
+.sabores-pagina a:focus-visible{outline:2px solid var(--sabores-acento);outline-offset:5px}
+.sabores-pagina ::selection{background:var(--sabores-verde);color:white}
+.sabores-etiqueta{display:block;margin-bottom:23px;color:var(--sabores-terracota);font-size:10px;font-weight:700;letter-spacing:.19em;line-height:1.8}
+.sabores-boton{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:15px 19px;border:1px solid rgba(57,57,50,.35);color:var(--sabores-texto);font-size:12px;transition:background .3s ease,color .3s ease,border-color .3s ease}
+.sabores-boton span{font-size:18px;transition:transform .3s ease}
+.sabores-boton:hover{border-color:var(--sabores-verde);background:var(--sabores-verde);color:white}
+.sabores-boton:hover span{transform:translateY(4px)}
+
+/* ENCABEZADO */
+.sabores-header{position:sticky;top:0;z-index:1000;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:25px;min-height:76px;padding:14px 6.5%;background:rgba(49,76,62,.97);color:#fffdf7;box-shadow:0 5px 22px rgba(29,46,35,.09);backdrop-filter:blur(12px)}
+.sabores-logo{display:inline-flex;align-items:center;gap:9px;width:fit-content;font-size:25px;font-weight:700;letter-spacing:-1.3px;white-space:nowrap}
+.sabores-logo-simbolo{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid currentColor;border-radius:50%;font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:400}
+.sabores-punto{color:var(--sabores-acento)}
+.sabores-nav{display:flex;justify-content:flex-end;justify-self:end;align-items:center;flex-wrap:wrap;gap:8px 17px;width:100%;margin-left:auto}
+.sabores-nav a,.sabores-nav-paginas a{position:relative;padding:8px 0;font-size:10px;font-weight:600;white-space:nowrap;opacity:.93;transition:opacity .25s ease}
+.sabores-nav a::after,.sabores-nav-paginas a::after{position:absolute;right:0;bottom:2px;left:0;height:1px;background:var(--sabores-acento);content:"";transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.sabores-nav a:hover,.sabores-nav-paginas a:hover{opacity:1}
+.sabores-nav a:hover::after,.sabores-nav-paginas a:hover::after{transform:scaleX(1)}
+.sabores-nav-paginas{display:flex;align-items:center;justify-content:flex-end;gap:13px}
+.sabores-nav-paginas a{font-size:10px}
+
+/* PORTADA */
+.sabores-portada{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:7%;min-height:650px;padding:85px 8% 75px;overflow:hidden;background:var(--sabores-crema)}
+.sabores-portada-contenido{position:relative;z-index:2;max-width:570px;animation:sabores-aparecer .8s ease both}
+.sabores-portada h1{margin-bottom:27px;font-size:clamp(54px,6.3vw,88px);line-height:.99}
+.sabores-portada h1 em{color:var(--sabores-terracota);font-weight:400}
+.sabores-portada-contenido>p{max-width:470px;margin-bottom:30px;color:#66655c;font-size:14px;line-height:1.95}
+.sabores-portada-nota{display:block;margin-top:35px;color:var(--sabores-secundario);font-size:9px;letter-spacing:.12em;line-height:1.8}
+.sabores-portada-imagen{position:relative;z-index:1;width:100%;max-width:620px;justify-self:end;animation:sabores-aparecer-imagen 1s ease both}
+.sabores-portada-imagen img{width:100%;height:clamp(390px,42vw,530px);object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.sabores-portada-imagen figcaption{display:flex;justify-content:space-between;gap:15px;padding-top:15px;color:var(--sabores-secundario);font-size:9px;letter-spacing:.08em}
+.sabores-numero-decorativo{position:absolute;right:36%;bottom:-115px;color:rgba(64,92,70,.045);font-family:Georgia,"Times New Roman",serif;font-size:370px;line-height:1;pointer-events:none}
+
+/* INTRODUCCIÓN */
+.sabores-introduccion{display:grid;grid-template-columns:1fr .78fr;gap:12%;align-items:start;padding:100px 12%;background:var(--sabores-arena)}
+.sabores-introduccion h2{max-width:590px;margin-bottom:0;font-size:clamp(37px,4.3vw,58px);line-height:1.1}
+.sabores-introduccion h2 em{color:var(--sabores-terracota);font-weight:400}
+.sabores-introduccion-texto{padding-top:22px}
+.sabores-introduccion-texto p{margin-bottom:20px;color:#66655c;font-size:13px;line-height:2}
+.sabores-introduccion-texto p:last-child{margin-bottom:0}
+
+/* KUMIS Y CUCAS */
+.sabores-destacado{display:grid;grid-template-columns:.92fr 1.08fr;align-items:start;gap:8%;padding:115px 10%;background:var(--sabores-crema)}
+.sabores-destacado-imagen{position:sticky;top:115px}
+.sabores-destacado-imagen img{width:100%;height:570px;object-fit:cover;object-position:center}
+.sabores-imagen-etiqueta{display:block;padding:15px 17px;background:var(--sabores-verde);color:#fffdf7;font-size:9px;letter-spacing:.13em}
+.sabores-destacado-contenido h2{margin-bottom:25px;font-size:clamp(45px,5vw,68px);line-height:1.04}
+.sabores-destacado-contenido h2 em{display:block;color:var(--sabores-terracota);font-weight:400}
+.sabores-destacado-contenido>p{margin-bottom:19px;color:var(--sabores-secundario);font-size:13px;line-height:1.95}
+.sabores-cita{display:grid;grid-template-columns:35px minmax(0,1fr);gap:12px;align-items:start;margin:32px 0 40px;padding:20px 0;border-top:1px solid #d7d0c3;border-bottom:1px solid #d7d0c3}
+.sabores-cita>span{color:var(--sabores-terracota);font-family:Georgia,"Times New Roman",serif;font-size:47px;line-height:1}
+.sabores-cita p{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:22px;line-height:1.5}
+
+/* RECETAS */
+.sabores-receta{margin-top:25px;padding-top:27px;border-top:1px solid #d8d2c6}
+.sabores-receta h3{margin-bottom:18px;font-size:28px}
+.sabores-receta h4{margin:27px 0 13px;font-size:13px;font-weight:700;letter-spacing:.025em}
+.sabores-receta-datos{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;color:var(--sabores-secundario);font-size:10px}
+.sabores-receta-datos span:first-child{color:var(--sabores-terracota);font-weight:700;letter-spacing:.12em}
+.sabores-receta ul,.sabores-receta ol{margin:0;padding-left:22px}
+.sabores-receta li{padding-left:4px;margin-bottom:11px;color:#5e5d54;font-size:12px;line-height:1.85}
+.sabores-receta li::marker{color:var(--sabores-terracota)}
+.sabores-nota-receta{margin-top:22px;padding:15px 17px;border-left:2px solid var(--sabores-terracota);background:#eee8db;color:#69675e;font-size:11px;line-height:1.85}
+
+/* GUAMPÍN */
+.sabores-guampin{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:8% 9%;padding:110px 10%;background:var(--sabores-verde);color:#fffdf7}
+.sabores-guampin .sabores-etiqueta{color:#edb99a}
+.sabores-guampin-texto h2{margin-bottom:25px;font-size:clamp(42px,4.8vw,65px);line-height:1.04}
+.sabores-guampin-texto h2 em{color:#edb99a;font-weight:400}
+.sabores-guampin-texto>p{margin-bottom:20px;color:rgba(255,253,247,.82);font-size:13px;line-height:1.95}
+.sabores-guampin-imagen{position:relative;min-width:0}
+.sabores-guampin-imagen img{width:100%;height:450px;object-fit:cover}
+.sabores-guampin-imagen figcaption{padding-top:15px;color:rgba(255,253,247,.7);font-size:10px;line-height:1.7}
+.sabores-guampin-dato{display:grid;grid-template-columns:95px minmax(0,1fr);gap:20px;align-items:center;margin-top:35px;padding-top:25px;border-top:1px solid rgba(255,255,255,.24)}
+.sabores-guampin-numero{color:#edb99a;font-family:Georgia,"Times New Roman",serif;font-size:68px;line-height:1}
+.sabores-guampin-dato p{margin-bottom:0}
+.sabores-guampin-dato strong,.sabores-guampin-dato span{display:block}
+.sabores-guampin-dato strong{margin-bottom:7px;font-size:12px}
+.sabores-guampin-dato p span{color:rgba(255,253,247,.76);font-size:11px;line-height:1.8}
+.sabores-guampin-preparacion{grid-column:1 / -1;display:grid;grid-template-columns:.75fr 1fr;gap:25px 10%;align-items:start;padding-top:40px;border-top:1px solid rgba(255,255,255,.25)}
+.sabores-guampin-preparacion h3{margin-bottom:15px;font-size:28px;line-height:1.2}
+.sabores-guampin-preparacion>p{margin-bottom:0;color:rgba(255,253,247,.8);font-size:13px;line-height:1.9}
+.sabores-ingredientes{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:10px}
+.sabores-ingredientes span{padding:11px 15px;border:1px solid rgba(255,253,247,.32);font-size:11px;transition:background .25s ease}
+.sabores-ingredientes span:hover{background:rgba(255,255,255,.1)}
+.sabores-guampin-variedad{grid-column:1 / -1;display:grid;grid-template-columns:.75fr 1fr;gap:15px 10%;margin-top:15px;padding-top:30px;border-top:1px solid rgba(255,255,255,.2)}
+.sabores-guampin-variedad h3{margin-bottom:0}
+.sabores-guampin-variedad p,.sabores-guampin-variedad ol{color:rgba(255,253,247,.82);font-size:12px;line-height:1.9}
+.sabores-guampin-variedad h4{margin:25px 0 10px;font-size:12px}
+.sabores-guampin-variedad ol{padding-left:20px}
+.sabores-guampin-variedad li{padding-left:4px;margin-bottom:9px}
+
+/* DULCES */
+.sabores-dulces{padding:115px 10%;background:var(--sabores-crema)}
+.sabores-seccion-cabecera{display:grid;grid-template-columns:1fr .7fr;align-items:end;gap:25px 10%;margin-bottom:55px}
+.sabores-seccion-cabecera .sabores-etiqueta{grid-column:1 / -1;margin-bottom:-10px}
+.sabores-seccion-cabecera h2{margin-bottom:0;font-size:clamp(43px,5.2vw,70px);line-height:1.04}
+.sabores-seccion-cabecera h2 em{color:var(--sabores-terracota);font-weight:400}
+.sabores-seccion-cabecera>p{margin-bottom:5px;color:var(--sabores-secundario);font-size:13px;line-height:1.95}
+.sabores-dulce-card{display:grid;grid-template-columns:.95fr 1.05fr;align-items:start;gap:8%;padding:30px;background:#eee8db}
+.sabores-dulce-imagen{position:sticky;top:110px}
+.sabores-dulce-imagen img{width:100%;height:430px;object-fit:cover}
+.sabores-dulce-imagen>span{display:block;padding:13px 15px;background:var(--sabores-verde);color:#fffdf7;font-size:9px;letter-spacing:.13em}
+.sabores-dulce-contenido{padding:15px 0}
+.sabores-dulce-contenido h3{margin-bottom:20px;font-size:clamp(36px,4vw,52px)}
+.sabores-dulce-contenido>p{color:var(--sabores-secundario);font-size:13px;line-height:1.95}
+
+/* ENVUELTOS */
+.sabores-envueltos{padding:115px 8%;background:#e8e5d8}
+.sabores-envueltos .sabores-seccion-cabecera{margin-bottom:60px}
+.sabores-envuelto-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;align-items:start}
+.sabores-envuelto-card{min-width:0;background:var(--sabores-crema);transition:transform .35s ease,box-shadow .35s ease}
+.sabores-envuelto-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(41,63,52,.09)}
+.sabores-envuelto-card>figure{position:relative;overflow:hidden;background:#d9d5c6}
+.sabores-envuelto-card>figure img{width:100%;height:330px;object-fit:cover}
+.sabores-card-numero{position:absolute;right:18px;bottom:15px;color:white;font-family:Georgia,"Times New Roman",serif;font-size:50px;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.sabores-envuelto-contenido{padding:30px}
+.sabores-envuelto-contenido h3{margin-bottom:18px;font-size:clamp(30px,3vw,42px);line-height:1.1}
+.sabores-envuelto-contenido>p{margin-bottom:25px;color:var(--sabores-secundario);font-size:13px;line-height:1.95}
+.sabores-envuelto-contenido .sabores-receta{margin-top:25px}
+.sabores-envuelto-contenido .sabores-receta h4{margin-top:24px}
+
+/* TAMARINDO */
+.sabores-tamarindo{display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:9%;padding:115px 10%;background:var(--sabores-arena)}
+.sabores-tamarindo-imagen{position:relative;overflow:hidden}
+.sabores-tamarindo-imagen img{width:100%;height:510px;object-fit:cover}
+.sabores-tamarindo-contenido h2{margin-bottom:25px;font-size:clamp(42px,4.8vw,64px);line-height:1.04}
+.sabores-tamarindo-contenido h2 em{color:var(--sabores-terracota);font-weight:400}
+.sabores-tamarindo-contenido>p{margin-bottom:20px;color:var(--sabores-secundario);font-size:13px;line-height:1.95}
+.sabores-tamarindo-nota{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;margin-top:30px;padding-top:20px;border-top:1px solid #d0c9bb}
+.sabores-tamarindo-nota>span{color:var(--sabores-terracota);font-size:21px}
+.sabores-tamarindo-nota p{margin-bottom:0;color:var(--sabores-secundario);font-size:11px;line-height:1.85}
+
+/* CIERRE Y PIE DE PÁGINA */
+.sabores-cierre{padding:95px 10% 105px;background:var(--sabores-verde-oscuro);color:#fffdf7;text-align:center}
+.sabores-cierre .sabores-etiqueta{color:#edb99a}
+.sabores-cierre h2{max-width:790px;margin:0 auto 25px;font-size:clamp(43px,5.4vw,72px);line-height:1.05}
+.sabores-cierre>p{max-width:620px;margin:0 auto 38px;color:rgba(255,253,247,.8);font-size:13px;line-height:1.95}
+.sabores-cierre-enlaces{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 27px}
+.sabores-cierre-enlaces a{padding-bottom:7px;border-bottom:1px solid #e6a17e;color:#fffdf7;font-size:11px;font-weight:600;transition:color .25s ease}
+.sabores-cierre-enlaces a:hover{color:#edb99a}
+.sabores-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 7%;background:var(--sabores-verde-profundo);color:#fffdf7}
+.sabores-footer p{margin-bottom:0;font-size:11px;letter-spacing:.06em}
+.sabores-footer>a:last-child{font-size:11px;transition:color .25s ease}
+.sabores-footer>a:last-child:hover{color:var(--sabores-acento)}
+
+/* ANIMACIONES */
+@keyframes sabores-aparecer{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sabores-aparecer-imagen{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* MENÚ DESCUBRIR */
+.sabores-descubrir{position:relative;align-self:center}
+.sabores-boton-descubrir{display:inline-flex;align-items:center;gap:8px;padding:8px 0;border:0;color:#fffdf7;background:transparent;font:inherit;font-size:10px;font-weight:600;white-space:nowrap;cursor:pointer;transition:color .25s ease}
+.sabores-boton-descubrir:hover,.sabores-boton-descubrir:focus-visible{color:#f0c6a8}
+.sabores-flecha-descubrir{display:inline-block;font-size:15px;line-height:1;transition:transform .25s ease}
+.sabores-descubrir.abierto .sabores-flecha-descubrir{transform:rotate(180deg)}
+.sabores-menu-descubrir{position:absolute;z-index:1200;top:calc(100% + 12px);right:0;width:270px;padding:8px 0;color:#37352f;background:#f4efe5;box-shadow:0 12px 30px rgba(0,0,0,.16);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
+.sabores-descubrir.abierto .sabores-menu-descubrir{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.sabores-menu-descubrir a{display:block;padding:15px 20px;color:#37352f;text-decoration:none;border-bottom:1px solid rgba(55,53,47,.12);transition:background .2s ease,padding-left .2s ease}
+.sabores-menu-descubrir a:last-child{border-bottom:0}
+.sabores-menu-descubrir a:hover,.sabores-menu-descubrir a:focus-visible{padding-left:25px;background:#e8dfd0}
+.sabores-menu-descubrir a span{display:block;margin-bottom:5px;font-size:13px}
+.sabores-menu-descubrir a small{display:block;color:#858176;font-size:11px;line-height:1.5}
+
+/* ESTILO DE FOTOGRAFÍAS COMO EN INDEX */
+.sabores-pagina figure,.sabores-pagina .sabores-destacado-imagen,.sabores-pagina .sabores-envuelto-card>figure{position:relative;isolation:isolate;overflow:hidden;border-radius:8px;background:#d9d1c3;box-shadow:0 18px 38px rgb(40 42 36 / 10%),0 3px 8px rgb(40 42 36 / 5%);outline:1px solid rgb(255 255 255 / 55%);outline-offset:-1px;transform:translateZ(0)}
+.sabores-pagina figure img,.sabores-pagina .sabores-destacado-imagen img{display:block;width:100%;object-fit:cover;object-position:center;filter:saturate(.96) contrast(1.03);transform:scale(1.001);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.sabores-pagina figure::before,.sabores-pagina .sabores-destacado-imagen::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgb(20 29 23 / 0%) 52%,rgb(20 29 23 / 58%) 100%),linear-gradient(0deg,rgb(20 29 23 / 7%),transparent 40%);opacity:.9;transition:opacity .45s ease}
+.sabores-pagina figure figcaption,.sabores-pagina .sabores-destacado-imagen>span{position:relative;z-index:2}
+.sabores-pagina figure:hover img,.sabores-pagina .sabores-destacado-imagen:hover img{transform:scale(1.065);filter:saturate(1.08) contrast(1.04)}
+.sabores-pagina figure:hover::before,.sabores-pagina .sabores-destacado-imagen:hover::before{opacity:1}
+
+/* TABLET */
+@media(max-width:1200px){
+.sabores-header{grid-template-columns:auto minmax(0,1fr);gap:12px 25px}
+.sabores-nav{justify-content:flex-end}
+.sabores-nav-paginas{grid-column:1 / -1;justify-content:center}
+.sabores-portada{gap:5%;padding-right:6%;padding-left:6%}
+}
+@media(max-width:900px){
+.sabores-header{gap:12px 20px;padding:15px 5%}
+.sabores-nav{gap:8px 13px}
+.sabores-nav a{font-size:10px}
+.sabores-portada{min-height:auto;padding:70px 6%}
+.sabores-portada h1{font-size:clamp(43px,6vw,62px)}
+.sabores-introduccion,.sabores-destacado,.sabores-guampin,.sabores-tamarindo{gap:7%;padding:80px 7%}
+.sabores-destacado-imagen img{height:480px}
+.sabores-guampin-imagen img{height:370px}
+.sabores-dulces{padding:85px 7%}
+.sabores-envueltos{padding:85px 6%}
+.sabores-dulce-card{gap:5%;padding:22px}
+.sabores-dulce-imagen img{height:380px}
+.sabores-envuelto-grid{gap:20px}
+.sabores-envuelto-contenido{padding:23px}
+.sabores-guampin-preparacion,.sabores-guampin-variedad{gap:20px 6%}
+.sabores-tamarindo-imagen img{height:430px}
+}
+
+/* MÓVIL */
+@media(max-width:600px){
+.sabores-header{position:relative;display:flex;align-items:flex-start;flex-direction:column;gap:12px;padding:18px 6%}
+.sabores-logo{font-size:24px}
+.sabores-nav{justify-content:flex-end;align-self:stretch;gap:6px 15px;width:100%;margin-left:0}
+.sabores-nav a{font-size:10px}
+.sabores-nav-paginas{justify-content:flex-start;flex-wrap:wrap;gap:10px 16px}
+.sabores-descubrir{width:auto;margin-left:0}
+.sabores-menu-descubrir{right:0;left:auto;width:min(270px,85vw)}
+.sabores-portada{grid-template-columns:1fr;gap:35px;padding:55px 6%}
+.sabores-portada h1{font-size:clamp(46px,11.5vw,66px)}
+.sabores-portada-contenido>p{font-size:13px}
+.sabores-portada-imagen{max-width:none}
+.sabores-portada-imagen img{height:390px}
+.sabores-numero-decorativo{display:none}
+.sabores-introduccion{grid-template-columns:1fr;gap:25px;padding:65px 7%}
+.sabores-introduccion h2{font-size:40px}
+.sabores-introduccion-texto{padding-top:0}
+.sabores-destacado{grid-template-columns:1fr;gap:35px;padding:65px 7%}
+.sabores-destacado-imagen{position:relative;top:auto}
+.sabores-destacado-imagen img{height:400px}
+.sabores-destacado-contenido h2{font-size:48px}
+.sabores-cita p{font-size:19px}
+.sabores-guampin{grid-template-columns:1fr;gap:35px;padding:65px 7%}
+.sabores-guampin-texto h2{font-size:45px}
+.sabores-guampin-imagen img{height:350px}
+.sabores-guampin-dato{grid-template-columns:75px minmax(0,1fr);gap:15px}
+.sabores-guampin-numero{font-size:57px}
+.sabores-guampin-preparacion{grid-template-columns:1fr;gap:15px;padding-top:30px}
+.sabores-guampin-preparacion h3{font-size:27px}
+.sabores-guampin-variedad{grid-template-columns:1fr;gap:15px}
+.sabores-dulces{padding:65px 6%}
+.sabores-seccion-cabecera{grid-template-columns:1fr;gap:20px;margin-bottom:35px}
+.sabores-seccion-cabecera .sabores-etiqueta{margin-bottom:0}
+.sabores-seccion-cabecera h2{font-size:44px}
+.sabores-dulce-card{grid-template-columns:1fr;gap:25px;padding:18px}
+.sabores-dulce-imagen{position:relative;top:auto}
+.sabores-dulce-imagen img{height:330px}
+.sabores-dulce-contenido{padding:10px 0}
+.sabores-dulce-contenido h3{font-size:40px}
+.sabores-envueltos{padding:65px 6%}
+.sabores-envuelto-grid{grid-template-columns:1fr;gap:28px}
+.sabores-envuelto-card>figure img{height:320px}
+.sabores-envuelto-contenido{padding:23px 20px}
+.sabores-envuelto-contenido h3{font-size:36px}
+.sabores-tamarindo{grid-template-columns:1fr;gap:35px;padding:65px 7%}
+.sabores-tamarindo-imagen img{height:360px}
+.sabores-tamarindo-contenido h2{font-size:46px}
+.sabores-cierre{padding:65px 7%}
+.sabores-cierre h2{font-size:45px}
+.sabores-cierre-enlaces{align-items:center;flex-direction:column;gap:18px}
+.sabores-footer{align-items:flex-start;flex-direction:column;gap:18px;padding:25px 7%}
+}
+
+/* ACCESIBILIDAD */
+@media(prefers-reduced-motion:reduce){
+.sabores-pagina *,.sabores-pagina *::before,.sabores-pagina *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+.sabores-pagina figure img,.sabores-pagina .sabores-destacado-imagen img{transition:none}
+.sabores-pagina figure:hover img,.sabores-pagina .sabores-destacado-imagen:hover img{transform:none}
+.sabores-menu-descubrir,.sabores-flecha-descubrir{transition:none}
+}
+
+/* Imagen del totumo dentro de la sección del kumis */
+.sabores-pagina .sabores-imagen-totumo {
+    position: relative;
+    margin: 25px 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--sabores-arena);
+    box-shadow: 0 18px 38px rgb(40 42 36 / 10%);
+}
+
+.sabores-pagina .sabores-imagen-totumo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sabores-pagina .sabores-imagen-totumo figcaption {
+    padding: 15px 17px;
+    color: #fffdf7;
+    background: var(--sabores-verde);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.8;
+}
+
+/* FRANJA VERDE PARA LOS PIES DE FOTO */
+.sabores-pagina .sabores-guampin-imagen figcaption,
+.sabores-pagina .sabores-chancuco-imagen figcaption {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 13px 15px;
+    background: var(--sabores-verde);
+    color: #fffdf7;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.8;
+}
+
+/* SECCIÓN DEL CHANCUCO */
+.sabores-chancuco {
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    align-items: center;
+    gap: 9%;
+    padding: 115px 10%;
+    background: var(--sabores-crema);
+}
+
+.sabores-chancuco-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--sabores-arena);
+    box-shadow: 0 18px 38px rgb(40 42 36 / 10%);
+}
+
+.sabores-chancuco-imagen img {
+    display: block;
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sabores-chancuco-contenido h2 {
+    margin-bottom: 25px;
+    font-size: clamp(42px, 4.8vw, 64px);
+    line-height: 1.04;
+}
+
+.sabores-chancuco-contenido h2 em {
+    color: var(--sabores-terracota);
+    font-weight: 400;
+}
+
+.sabores-chancuco-contenido > p {
+    margin-bottom: 20px;
+    color: var(--sabores-secundario);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+@media (max-width: 900px) {
+    .sabores-chancuco {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 80px 7%;
+    }
+
+    .sabores-chancuco-imagen img {
+        height: 430px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sabores-chancuco {
+        padding: 65px 6%;
+    }
+
+    .sabores-chancuco-imagen img {
+        height: 330px;
+    }
+
+    .sabores-chancuco-contenido h2 {
+        font-size: 42px;
+    }
+}
