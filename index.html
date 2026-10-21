@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rumbo es una plataforma para descubrir destinos, experiencias y expresiones culturales. Explora la Ruta del Totumo y la riqueza de Patía, Cauca.">
+<meta name="theme-color" content="#18251e">
+<title>Rumbo | Descubre Patía y sus experiencias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js" defer></script>
+<style>
+.menu-paginas {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+.menu-paginas summary {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    list-style: none;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.menu-paginas summary::-webkit-details-marker {
+    display: none;
+}
+.menu-paginas summary::after {
+    content: "⌄";
+    font-size: 15px;
+    transition: transform .25s ease;
+}
+.menu-paginas[open] summary::after {
+    transform: rotate(180deg);
+}
+.menu-paginas summary:hover {
+    opacity: .7;
+}
+.menu-paginas-lista {
+    position: absolute;
+    top: calc(100% + 22px);
+    right: 0;
+    z-index: 30;
+    width: 215px;
+    padding: 10px;
+    background: #f3efe6;
+    color: #282a24;
+    border: 1px solid rgb(40 42 36 / 12%);
+    box-shadow: 0 14px 35px rgb(0 0 0 / 18%);
+}
+.menu-paginas-lista a {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 13px 12px;
+    font-size: 12px;
+    transition: background .25s ease, padding .25s ease;
+    color: #282a24;
+}
+.menu-paginas-lista a + a {
+    border-top: 1px solid rgb(40 42 36 / 12%);
+}
+.menu-paginas-lista a:hover {
+    padding-left: 17px;
+    background: #e8e2d6;
+}
+.menu-paginas-lista small {
+    color: #77776e;
+    font-size: 10px;
+}
+@media (max-width: 1000px) {
+    .menu-paginas-lista {
+        top: calc(100% + 12px);
+    }
+}
+@media (max-width: 650px) {
+    .menu-paginas summary {
+        font-size: 10px;
+    }
+    .menu-paginas-lista {
+        position: fixed;
+        top: 120px;
+        right: 16px;
+        width: 205px;
+    }
+}
+</style>
+</head>
+
+<body>
+<header class="encabezado" id="inicio">
+    <a class="marca" href="#inicio" aria-label="Rumbo, inicio">
+        <span class="marca-simbolo">R.</span>
+        <span>rumbo<span class="marca-punto">.</span></span>
+    </a>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+        <a href="#ruta">La ruta</a>
+        <a href="#experiencias">Experiencias</a>
+        <a href="#recorrido">Recorrido</a>
+        <a href="#experiencias">Atractivos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#video">Video</a>
+
+        <details class="menu-paginas">
+            <summary>Descubrir</summary>
+            <div class="menu-paginas-lista">
+                <a href="paginas/artesania.html">
+                    Artesanía
+                    <small>Oficios y saberes del totumo</small>
+                </a>
+                <a href="paginas/musica.html">
+                    Música y tradición
+                    <small>Violín, bambuco y danza</small>
+                </a>
+                <a href="paginas/sabores.html">
+                    Sabores
+                    <small>Gastronomía y memoria patiana</small>
+                </a>
+                <a href="paginas/territorio.html">
+                    Territorio
+                    <small>Paisajes y lugares por conocer</small>
+                </a>
+            </div>
+        </details>
+    </nav>
+</header>
+
+<main>
+    <!-- PORTADA -->
+    <section class="portada" aria-labelledby="titulo-portada">
+        <img
+            class="portada-imagen"
+            src="img/19.jpeg"
+            alt="Paisaje del territorio de Patía, Cauca"
+        >
+
+        <div class="portada-capa"></div>
+
+        <div class="portada-superior">
+            <span>COLOMBIA · CAUCA</span>
+            <span>DESTINOS · CULTURA · EXPERIENCIAS</span>
+        </div>
+
+        <div class="portada-contenido">
+            <p class="sobretitulo lema-portada">
+                HAY LUGARES QUE MERECEN SER DESCUBIERTOS
+            </p>
+
+            <h1 id="titulo-portada">
+                Rumbo a<br>
+                <em>nuevas historias,</em>
+                <br>lugares y tradiciones.
+            </h1>
+
+            <p class="portada-descripcion">
+                Una invitación a explorar destinos y conocer
+                las historias que dan identidad a cada territorio.
+                Comienza por Patía y descubre la Ruta del Totumo,
+                sus saberes artesanales y su riqueza cultural.
+            </p>
+
+            <a class="boton-principal" href="#ruta">
+                Descubrir Patía <span>↓</span>
+            </a>
+        </div>
+
+        <div class="portada-inferior">
+            <span>RUMBO / DESCUBRIR</span>
+            <span>UNA INVITACIÓN A EXPLORAR</span>
+            <a href="#ruta" aria-label="Desplazarse hacia la introducción">↓</a>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="introduccion seccion" id="ruta">
+        <div class="introduccion-etiqueta">
+            <span class="numero-seccion">01</span>
+            <span>EL DESTINO</span>
+        </div>
+
+        <div class="introduccion-contenido">
+            <p class="sobretitulo texto-verde">
+                UN TERRITORIO CON HISTORIA
+            </p>
+
+            <h2>
+                Hay lugares que se conocen.
+                <em>Y otros que se sienten.</em>
+            </h2>
+
+            <p class="texto-introduccion">
+                En Patía, Cauca, la Ruta del Totumo invita a
+                acercarse a los oficios artesanales, la música,
+                la gastronomía y las expresiones culturales
+                que forman parte de la identidad del territorio.
+            </p>
+
+            <a class="enlace-texto" href="#experiencias">
+                Conocer las experiencias <span>↗</span>
+            </a>
+        </div>
+
+        <div class="introduccion-imagen imagen-marco">
+            <img
+                src="img/kumis.jpeg"
+                alt="Kumis patiano acompañado de cucas"
+                loading="lazy"
+            >
+            <span class="imagen-nota">
+                PATÍA, CAUCA · COLOMBIA
+            </span>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIAS -->
+    <section class="experiencias seccion" id="experiencias">
+        <div class="cabecera-seccion">
+            <div>
+                <p class="sobretitulo texto-verde">
+                    EL CORAZÓN DEL RECORRIDO
+                </p>
+                <h2>
+                    Tradición que <em>se vive.</em>
+                </h2>
+            </div>
+
+            <p class="cabecera-descripcion">
+                Oficios, música y sabores que permiten descubrir
+                distintas facetas de la experiencia turística
+                en Patía.
+            </p>
+        </div>
+
+        <div class="rejilla-experiencias">
+            <!-- ARTESANÍA -->
+            <article class="experiencia experiencia-grande">
+                <div class="experiencia-foto">
+                    <img
+                        src="img/9.jpeg"
+                        alt="Espacio de trabajo artesanal en el que se elaboran piezas de totumo"
+                        loading="lazy"
+                    >
+                    <span class="experiencia-numero">
+                        01 / ARTESANÍA
+                    </span>
+                </div>
+
+                <div class="experiencia-info">
+                    <div>
+                        <h3>El arte del totumo</h3>
+                        <p>
+                            Conoce cómo este fruto se transforma
+                            en recipientes, utensilios, instrumentos
+                            y otras piezas que reflejan los saberes
+                            de los artesanos del territorio.
+                        </p>
+                        <a class="enlace-texto" href="paginas/artesania.html">
+                            Explorar la artesanía <span>↗</span>
+                        </a>
+                    </div>
+                    <span class="flecha-decorativa">↗</span>
+                </div>
+            </article>
+
+            <!-- MÚSICA -->
+            <article class="experiencia experiencia-desplazada">
+                <div class="experiencia-foto">
+                    <img
+                        src="img/17.jpeg"
+                        alt="Intérprete de violín, expresión musical tradicional"
+                        loading="lazy"
+                    >
+                    <span class="experiencia-numero">
+                        02 / MÚSICA
+                    </span>
+                </div>
+
+                <div class="experiencia-info">
+                    <div>
+                        <h3>El sonido de la tradición</h3>
+                        <p>
+                            Acércate a la historia del bambuco
+                            patiano, el violín y las danzas que
+                            mantienen vivas las expresiones
+                            culturales de la comunidad.
+                        </p>
+                        <a class="enlace-texto" href="paginas/musica.html">
+                            Descubrir la cultura <span>↗</span>
+                        </a>
+                    </div>
+                    <span class="flecha-decorativa">↗</span>
+                </div>
+            </article>
+
+            <!-- GASTRONOMÍA -->
+            <article class="experiencia experiencia-tercera">
+                <div class="experiencia-foto">
+                    <img
+                        src="img/8.jpeg"
+                        alt="Preparación gastronómica tradicional de Patía"
+                        loading="lazy"
+                    >
+                    <span class="experiencia-numero">
+                        03 / GASTRONOMÍA
+                    </span>
+                </div>
+
+                <div class="experiencia-info">
+                    <div>
+                        <h3>El sabor del encuentro</h3>
+                        <p>
+                            Sabores, preparaciones y encuentros que
+                            también cuentan la historia de Patía.
+                            La cocina local acompaña el recorrido
+                            y conserva recuerdos que pasan de una
+                            generación a otra.
+                        </p>
+                        <a class="enlace-texto" href="paginas/sabores.html">
+                            Descubrir los sabores <span>↗</span>
+                        </a>
+                    </div>
+                    <span class="flecha-decorativa">↗</span>
+                </div>
+            </article>
+
+            <!-- TERRITORIO -->
+            <article class="experiencia experiencia-territorio">
+                <div class="experiencia-foto">
+                    <img
+                        src="img/puente Galindez.jpg"
+                        alt="Puente de Galíndez, paisaje y conexión del territorio de Patía"
+                        loading="lazy"
+                    >
+                    <span class="experiencia-numero">
+                        04 / TERRITORIO
+                    </span>
+                </div>
+
+                <div class="experiencia-info">
+                    <div>
+                        <h3>Un territorio que conecta</h3>
+                        <p>
+                            El puente de Galíndez invita a descubrir
+                            los paisajes, los caminos y los lugares
+                            que forman parte de la memoria y la vida
+                            cotidiana de Patía.
+                        </p>
+                        <a class="enlace-texto" href="paginas/territorio.html">
+                            Explorar el territorio <span>↗</span>
+                        </a>
+                    </div>
+                    <span class="flecha-decorativa">↗</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- RECORRIDO -->
+    <section class="itinerario" id="recorrido">
+        <div class="itinerario-fondo"></div>
+
+        <div class="itinerario-contenido">
+            <p class="sobretitulo">EL RECORRIDO</p>
+
+            <h2>
+                Sabores que cuentan<br>
+                <em>la historia de Patía.</em>
+            </h2>
+
+            <p>
+                Cada preparación guarda algo más que un sabor:
+                reúne ingredientes, costumbres y recuerdos compartidos.
+                En la Ruta del Totumo, la gastronomía también es una
+                forma de acercarse a la identidad patiana.
+            </p>
+
+            <a class="boton-claro" href="paginas/sabores.html">
+                Descubrir los sabores locales <span>↗</span>
+            </a>
+        </div>
+
+        <div class="itinerario-nota">
+            <span>RUTA DEL TOTUMO</span>
+            <span>PATÍA · CAUCA</span>
+        </div>
+    </section>
+
+    <!-- GALERÍA CULTURAL INTERACTIVA -->
+    <section class="galeria-cultural" id="galeria">
+        <div class="galeria-cultural-cabecera">
+            <p class="sobretitulo">POSTALES DEL TERRITORIO</p>
+
+            <h2>
+                Una cultura que pasa
+                <em>de generación en generación.</em>
+            </h2>
+
+            <p>
+                Conoce a las personas, los saberes y los paisajes
+                que hacen única la Ruta del Totumo.
+            </p>
+        </div>
+
+        <div class="relato-cultural" aria-live="polite">
+            <div class="relato-imagen">
+                <img
+                    id="relato-foto"
+                    src="img/4.jpeg"
+                    alt="Mujer patiana con un totumo, símbolo de identidad cultural"
+                >
+                <span id="relato-numero">01 / IDENTIDAD</span>
+            </div>
+
+            <div class="relato-contenido">
+                <p class="sobretitulo" id="relato-etiqueta">
+                    RAÍCES QUE NOS DEFINEN
+                </p>
+
+                <h3 id="relato-titulo">
+                    La identidad vive en su gente.
+                </h3>
+
+                <p id="relato-texto">
+                    En cada rostro, gesto y celebración permanece
+                    la memoria de Patía. Las tradiciones siguen
+                    presentes en la forma de reunirse, compartir
+                    y reconocerse como comunidad.
+                </p>
+
+                <div class="relato-controles">
+                    <span class="relato-progreso" id="relato-progreso">
+                        01 <i>—</i> 04
+                    </span>
+
+                    <button
+                        class="relato-siguiente"
+                        id="relato-siguiente"
+                        type="button"
+                    >
+                        Siguiente historia <span>↗</span>
+                    </button>
+                </div>
+
+                <div class="relato-puntos" aria-label="Elegir relato cultural">
+                    <button
+                        class="relato-punto activo"
+                        type="button"
+                        data-relato="0"
+                        aria-label="Ver identidad"
+                        aria-current="true"
+                    ></button>
+
+                    <button
+                        class="relato-punto"
+                        type="button"
+                        data-relato="1"
+                        aria-label="Ver saberes artesanales"
+                    ></button>
+
+                    <button
+                        class="relato-punto"
+                        type="button"
+                        data-relato="2"
+                        aria-label="Ver música y danza"
+                    ></button>
+
+                    <button
+                        class="relato-punto"
+                        type="button"
+                        data-relato="3"
+                        aria-label="Ver territorio y tradición"
+                    ></button>
+                </div>
+            </div>
+        </div>
+
+        <p class="credito-fotografico">
+            Fotografías: Julián Moreno.
+        </p>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-seccion" id="video">
+        <div class="video-texto">
+            <p class="sobretitulo">MÁS ALLÁ DE LAS PALABRAS</p>
+
+            <h2>
+                Conoce la ruta.<br>
+                <em>Vívela desde aquí.</em>
+            </h2>
+
+            <p>
+                Una mirada audiovisual a la experiencia turística
+                y a las tradiciones que hacen especial este recorrido
+                por Patía.
+            </p>
+        </div>
+
+        <div class="video-marco">
+            <video controls preload="metadata" playsinline>
+                <source src="video/ruta-del-totumo.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+        </div>
+
+        <div class="video-credito">
+            <span class="video-credito-etiqueta">REGISTRO AUDIOVISUAL</span>
+            <p>Material audiovisual de la Gobernación del Cauca Secretaria de Desarrollo Económico y Competitividad Componente de turismo</p>
+            <span class="video-credito-autora">
+                Material: Aurora Angulo Valencia
+            </span>
+        </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="cierre">
+        <p class="sobretitulo">RUMBO · CAUCA, COLOMBIA</p>
+
+        <h2>
+            El viaje comienza<br>
+            <em>cuando descubrimos.</em>
+        </h2>
+
+        <a class="boton-principal" href="#inicio">
+            Volver al inicio <span>↑</span>
+        </a>
+    </section>
+</main>
+
+<footer class="pie-pagina">
+    <a class="marca marca-pie" href="#inicio">
+        <span class="marca-simbolo">R.</span>
+        <span>rumbo<span class="marca-punto">.</span></span>
+    </a>
+
+    <p>Plataforma de divulgación turística</p>
+    <p>Ruta del Totumo · Patía, Cauca</p>
+</footer>
+</body>
+</html>
